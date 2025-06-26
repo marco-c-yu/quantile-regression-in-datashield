@@ -1,5 +1,8 @@
-# quantile-regression-in-datashield
-The R scripts were developed under R version 4.1.2 for performing linear quantile regression using DataSHIELD.
+# Linear Quantile Regression (LQR) in DataSHIELD (a federated quantile regression)
+
+Content of this repository is part of a working paper affiliate with Singapore Eye Research Institute.
+
+The R scripts were developed under R version 4.1.2 for performing linear quantile regression (LQR) using DataSHIELD.
 
 
 **DataSHIELD_LQR_subfunc_solveB.R** recorded the script for estimating the regression coefficients of linear quantile regression,
