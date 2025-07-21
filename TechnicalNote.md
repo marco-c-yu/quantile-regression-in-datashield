@@ -1,7 +1,15 @@
 # Technical Note: Linear Quantile Regression (LQR)
 
 ## Outline
-[Introduction to Quantile Regression (QR)](#introduction-to-quantile-regression-(qr)) 
+[Introduction to Quantile Regression (QR)](#introduction-to-quantile-regression-qr) 
+
+[Linear Quantile Regression (LQR)](#linear-quantile-regression-lqr) 
+
+[Federated LQR](#federated-lqr) 
+
+[References](#references) 
+
+## 
 
 ### Introduction to Quantile Regression (QR)
 
@@ -11,7 +19,8 @@ $$ q=Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau) $$
 
 where $q=Q_{Y|X}(\tau)$ represents the $\tau$-th conditional quantile of the response variable Y given the predictors X.
 
-## 
+### Linear Quantile Regression (LQR)
+
 For **Linear Quantile Regression (LQR)**,
 
 $$ q=Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau)=X\beta_\tau $$
@@ -44,8 +53,7 @@ $$ w_i(t)=\frac{ \tau I(y_i \ge X_i\beta_\tau(t) ) + (1- \tau ) I(y_i < X_i\beta
 
 
 
-##
-**Reference:**
+### References
 
 [^1]: Schnabel, S. K., & Eilers, P. H. C. (2013). Simultaneous estimation of quantile curves using quantile sheets. AStA Advances in Statistical Analysis, 97(1), 77–87. https://doi.org/10.1007/s10182-012-0198-1
 
