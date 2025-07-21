@@ -15,8 +15,8 @@
 
 ##
 
-<h4 id="login-optional-fields">
-Optional Fields
+<h3 id="cfq">
+Conditional Quantile Function
 </h4>
 
 ### Conditional Quantile Function <span id="cfq"></span>
