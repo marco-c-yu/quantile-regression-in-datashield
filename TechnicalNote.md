@@ -50,12 +50,10 @@ where
 $$ w_i=\frac{ \tau I(y_i \ge X_i\beta_\tau ) + (1- \tau ) I(y_i < X_i\beta_\tau ) }{\sqrt{(y_i-X_i\beta_\tau)^2}} $$
 
 It can be considered as an **Iteratively Reweighted Least Squares (IRLS)**[^1]<sup>,</sup>[^2], so that $\beta_\tau$ can be esimated iteratively by 
-
-$\hat\beta_\tau = \lim_{n\to\infty} \hat\beta_{\tau;t}$
-
+$\hat\beta_\tau = \lim_{n\to\infty} \hat\beta_{\tau;t}$, 
 such that
 
-$$ \hat\beta_{\tau;t+1} = {arg\max} \\{ \sum_{y_i} [w_{i;t}( y_i - X_i \hat\beta_{\tau;t} )^2] \\} = (X^TW_tX)^{-1}X^TW_ty $$
+$$ \hat\beta_{\tau;t+1} = {arg\max} \\{ \sum_{y_i} [w_{i;t}( y_i - X_i \hat\beta_{\tau;t+1} )^2] \\} = (X^TW_tX)^{-1}X^TW_ty $$
 
 where $W_t$ is the diagonal matrix of weights
 
