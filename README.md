@@ -19,11 +19,6 @@ Variance of regression coefficients were estimated by Powell’s kernel estimato
 
 [^2]: Waltrup, L. S., Sobotka, F., Kneib, T., & Kauermann, G. (2015). Expectile and quantile regression—David and Goliath? Statistical Modelling, 15(5), 433–456. https://doi.org/10.1177/1471082X14561155 
 
-
-**DataSHIELD_LQR_subfunc_solveVb.R** recorded the script for estimating variance of regression coefficient estimators following Powell’s kernel estimator.
-
-Reference:
-
 [^3]: Powell, J. (1991) Estimation of Monotonic Regression Models under Quantile Restrictions, in Nonparametric and Semiparametric Methods in Econometrics, W. Barnett, J. Powell, and G Tauchen (eds.), Cambridge U. Press 
 
 [^4]: Kato, K. (2012). Asymptotic normality of Powell’s kernel estimator. Annals of the Institute of Statistical Mathematics, 64(2), 255–273. https://doi.org/10.1007/s10463-010-0310-9 
