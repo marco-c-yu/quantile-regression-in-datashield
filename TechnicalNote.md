@@ -15,6 +15,10 @@
 
 ##
 
+<h4 id="login-optional-fields">
+Optional Fields
+</h4>
+
 ### Conditional Quantile Function <span id="cfq"></span>
 
 The $\tau$-th conditional quantile function of the response variable Y given the predictors X is defined as
