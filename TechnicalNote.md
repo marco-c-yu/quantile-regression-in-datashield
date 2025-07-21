@@ -1,12 +1,15 @@
 # Technical Note: Linear Quantile Regression (LQR)
 
 Quantile regression can be formulated as
-<br/>
+
 $$ q=Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau) $$
 
 $q=Q_{Y|X}(\tau)$ represents the $\tau$-th conditional quantile of the response variable Y given the predictors X.
-<br/>
-<br/>
+
+
+
+
+
 For linear quantile regression
 
 $$ q=Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau)=X\beta_\tau $$
