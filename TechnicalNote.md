@@ -51,9 +51,7 @@ $$ w_i=\frac{ \tau I(y_i \ge X_i\beta_\tau ) + (1- \tau ) I(y_i < X_i\beta_\tau 
 
 It can be considered as an **Iteratively Reweighted Least Squares (IRLS)**[^1]<sup>,</sup>[^2], so that $\beta_\tau$ can be esimated iteratively by 
 
-$$ \hat{\beta}_\tau $$
-
-$$ ^\beta_\tau $$
+$$ \hat{\beta}_{\tau;t} $$
 
 ${\hat{\beta}}_\tau = \lim_{n\to\infty} {\hat{\beta}}_{\tau;t}$, 
 
