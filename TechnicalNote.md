@@ -7,6 +7,8 @@
 
 [Linear Quantile Regression (LQR)](#linear-quantile-regression-lqr) 
 
+[Iteratively Reweighted Least Squarees method for LQR](#iteratively-reweighted-least-squares-method-for-lqr) 
+
 [Federated LQR Algorithm](#federated-lqr-algorithm) 
 
 [References](#references) 
@@ -37,6 +39,8 @@ $Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau)=X\beta_\tau$ can be solved by
 
 $$ \beta_\tau = {arg\max} \\{ \sum_{y_i \ge X_i\beta_\tau} [\tau|y_i-X_i\beta_\tau|] + \sum_{y_i < X_i\beta_\tau} [(1-\tau)|y_i-X_i\beta_\tau|] \\} $$
 
+### Iteratively Reweighted Least Squarees method for LQR [^1]<sup>,</sup>[^2]
+
 By considering 
 
 $$ |y_i-X_i\beta_\tau|=\frac{1}{\sqrt{(y_i-X_i\beta_\tau)^2}}(y_i-X_i\beta_\tau)^2 $$
@@ -49,7 +53,7 @@ where
 
 $$ w_i=\frac{ \tau I(y_i \ge X_i\beta_\tau ) + (1- \tau ) I(y_i < X_i\beta_\tau ) }{\sqrt{(y_i-X_i\beta_\tau)^2}} $$
 
-It can be considered as an **Iteratively Reweighted Least Squares (IRLS)**[^1]<sup>,</sup>[^2], so that $\beta_\tau$ can be esimated iteratively by 
+It can be considered as an **Iteratively Reweighted Least Squares (IRLS)**, so that $\beta_\tau$ can be esimated iteratively by 
 $\hat\beta_\tau = \lim_{n\to\infty} \hat\beta_{\tau;t}$, 
 such that
 
