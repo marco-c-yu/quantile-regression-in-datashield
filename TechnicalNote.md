@@ -53,6 +53,8 @@ It can be considered as an **Iteratively Reweighted Least Squares (IRLS)**[^1]<s
 
 $$ \hat{\beta}_{\tau;t} $$
 
+$$ \hat{\beta}_\tau = \lim_{n\to\infty} \hat{\beta}_{\tau;t} $$
+
 ${\hat{\beta}}_\tau = \lim_{n\to\infty} {\hat{\beta}}_{\tau;t}$, 
 
 such that
