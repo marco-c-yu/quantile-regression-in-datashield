@@ -39,7 +39,8 @@ $Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau)=X\beta_\tau$ can be solved by
 
 $$ \beta_\tau = {arg\max} \\{ \sum_{y_i \ge X_i\beta_\tau} [\tau|y_i-X_i\beta_\tau|] + \sum_{y_i < X_i\beta_\tau} [(1-\tau)|y_i-X_i\beta_\tau|] \\} $$
 
-### Iteratively Reweighted Least Squarees method for LQR [^1]<sup>,</sup>[^2]
+### Iteratively Reweighted Least Squarees method for LQR
+[^1]<sup>,</sup>[^2]
 
 By considering 
 
