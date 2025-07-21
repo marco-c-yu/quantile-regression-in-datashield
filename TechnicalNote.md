@@ -1,16 +1,16 @@
 # Technical Note: Linear Quantile Regression (LQR)
 
+
 ### Outline
 
 [Introduction to Quantile Regression (QR)](#introduction-to-quantile-regression-qr) 
 
 [Linear Quantile Regression (LQR)](#linear-quantile-regression-lqr) 
 
-[Federated LQR](#federated-lqr) 
+[Federated LQR Algorithm](#federated-lqr-algorithm) 
 
 [References](#references) 
 
-## 
 
 ### Introduction to Quantile Regression (QR)
 
@@ -20,7 +20,6 @@ $$ q=Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau) $$
 
 where $q=Q_{Y|X}(\tau)$ represents the $\tau$-th conditional quantile of the response variable Y given the predictors X.
 
-## 
 
 ### Linear Quantile Regression (LQR)
 
@@ -34,7 +33,6 @@ It can be solved by
 
 $$ \beta_\tau = {arg\max} \\{ \sum_{y_i \ge X_i\beta_\tau} [\tau|y_i-X_i\beta_\tau|] + \sum_{y_i < X_i\beta_\tau} [(1-\tau)|y_i-X_i\beta_\tau|] \\} $$
 
-## 
 
 By considering 
 $|y_i-X_i\beta_\tau|=\frac{1}{\sqrt{(y_i-X_i\beta_\tau)^2}}(y_i-X_i\beta_\tau)^2$,
@@ -56,7 +54,7 @@ where W(t) is the diagonal matrix of weights
 $$ w_i(t)=\frac{ \tau I(y_i \ge X_i\beta_\tau(t) ) + (1- \tau ) I(y_i < X_i\beta_\tau(t) ) }{\sqrt{(y_i-q)^2}} $$
 
 
-
+### Federated LQR Algorithm
 ### References
 
 [^1]: Schnabel, S. K., & Eilers, P. H. C. (2013). Simultaneous estimation of quantile curves using quantile sheets. AStA Advances in Statistical Analysis, 97(1), 77–87. https://doi.org/10.1007/s10182-012-0198-1
