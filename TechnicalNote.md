@@ -9,6 +9,8 @@
 
 [Iteratively Reweighted Least Squares (IRLS) method for LQR](#iteratively-reweighted-least-squares-irls-method-for-lqr) 
 
+[Horizontal Federated Learning](#horizontal-federated-learning) 
+
 [Horizontal Federated LQR Algorithm](#horizontal-federated-lqr-algorithm) 
 
 [References](#references) 
@@ -69,7 +71,7 @@ $$ w_{i;t}=\frac{ \tau I(y_i \ge X_i \hat\beta_{\tau;t} ) + (1- \tau ) I(y_i < X
 
 ##
 
-### Horizontal Federated LQR Algorithm
+### Horizontal Federated Learning
 
 A **federated learning system** is a learning process trained on data sets distributed across multiple parties while preventing data leakage.
 
@@ -77,6 +79,9 @@ A **federated learning system** is a learning process trained on data sets distr
 
 There are other categories of federated learning, including **Vertical Federated Learning** and **Federated Transfer Learning**, which will not be discussed here.
 
+##
+
+### Horizontal Federated LQR Algorithm
 
 [^7]
 
