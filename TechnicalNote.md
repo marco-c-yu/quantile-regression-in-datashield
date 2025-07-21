@@ -22,9 +22,9 @@ It can also be treated as an **Iterative Weighted Least Squares (IWLS)** by cons
 
 $$ |y_i-q|=\frac{1}{\sqrt{(y_i-q)^2}}(y_i-q)^2 $$
 
-so that $\beta_\tau$ can be solved by
+so that $\beta_\tau$ can be solved iteratively by
 
-$$ \hat{\beta_\tau}=(X\'WX)^{-1}X\'Wy $$
+$$ \beta_\tau^{t+1} = {arg\max} \\{ \sum_{y_i} [w_i(y_i-q)^2] \\} = (X^TWX)^{-1}X^TWy $$
 
 where W is the diagonal matrix of weights given by
 
