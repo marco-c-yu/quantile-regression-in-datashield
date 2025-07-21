@@ -3,7 +3,7 @@
 
 ### Outline
 
-[Introduction to Quantile Regression (QR)](#introduction-to-quantile-regression-qr) 
+[Conditional Quantile Function](#conditional-quantile-function) 
 
 [Linear Quantile Regression (LQR)](#linear-quantile-regression-lqr) 
 
@@ -13,19 +13,23 @@
 
 ##
 
-### Introduction to Quantile Regression (QR)
+### Conditional Quantile Function
 
-**Quantile Regression (QR)** can be formulated as
+The $\tau$-th conditional quantile function is defined as
 
 $$ q=Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau) $$
 
-where $q=Q_{Y|X}(\tau)$ represents the $\tau$-th conditional quantile of the response variable Y given the predictors X.
+of the response variable Y given the predictors X.
 
 ##
 
 ### Linear Quantile Regression (LQR)
 
-For **Linear Quantile Regression (LQR)**,
+In **Linear Quantile Regression (LQR)** modeol,
+
+$$ Q_{Y|X}(\tau)=X\beta_\tau $$
+
+where X is a $(n \times p)$-dimensional matrix with element $x_{ij}$ represents the j-th variable value for subject i
 
 $$ q=Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau)=X\beta_\tau $$
 
