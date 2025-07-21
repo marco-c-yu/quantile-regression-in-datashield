@@ -2,7 +2,7 @@
 
 Quantile regression can be formulated as
 
-$ q=Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau) $
+$$ q=Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau) $$
 
 For linear quantile regression
 $ q=Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau)=X\beta_\tau $
