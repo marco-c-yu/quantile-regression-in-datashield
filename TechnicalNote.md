@@ -28,4 +28,4 @@ $$ \beta_\tau^{t+1} = {arg\max} \\{ \sum_{y_i} [w_i(y_i-q)^2] \\} = (X^TWX)^{-1}
 
 where W is the diagonal matrix of weights given by
 
-$$ W_ii=\frac{\tauI(y_i \ge q)+(1-\tau)I(y_i<q)}{\sqrt{(y_i-q)^2}} $$
+$$ w_i=\frac{\tau I(y_i \ge q)+(1-\tau) I(y_i<q)}{\sqrt{(y_i-q)^2}} $$
