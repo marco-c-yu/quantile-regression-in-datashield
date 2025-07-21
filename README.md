@@ -7,7 +7,9 @@ The R scripts were developed under R version 4.1.2 for performing linear quantil
 
 
 **LQR_in_DataSHIELD.R** recorded the script for estimating the regression coefficients and the variance of coefficients for linear quantile regression model.
+
 Regression coefficients were estimated by Iterative Weighted Least Squares (IWLS). [^1]<sup>,</sup>[^2] 
+
 Variance of regression coefficients were estimated by Powell’s kernel estimator. [^3]<sup>,</sup>[^4]
 
 ##
