@@ -1,7 +1,7 @@
 # Technical Note: Linear Quantile Regression (LQR)
 
 
-### Outline
+### Contents
 
 [Conditional Quantile Function](#conditional-quantile-function) 
 
@@ -27,7 +27,7 @@ where $F_{Y|X}$ is the cumulative distribution function (CDF) of Y given X.
 
 ### Linear Quantile Regression (LQR)
 
-In **Linear Quantile Regression (LQR)** model, the conditional quantile function is assumed to be a linear combination of the predictors X:
+In **Linear Quantile Regression (LQR)**[^1]<sup>,</sup>[^2] model, the conditional quantile function is assumed to be a linear combination of the predictors X:
 
 $$ Q_{Y|X}(\tau)=X\beta_\tau $$
 
@@ -53,7 +53,7 @@ where
 
 $$ w_i=\frac{ \tau I(y_i \ge X_i\beta_\tau ) + (1- \tau ) I(y_i < X_i\beta_\tau ) }{\sqrt{(y_i-X_i\beta_\tau)^2}} $$
 
-It can be considered as an **Iteratively Reweighted Least Squares (IRLS)**[^1]<sup>,</sup>[^2], 
+It can be considered as an **Iteratively Reweighted Least Squares (IRLS)**[^3], 
 
 so that $\beta_\tau$ can be esimated iteratively by 
 $\hat\beta_\tau = \lim_{n\to\infty} \hat\beta_{\tau;t}$, 
@@ -65,6 +65,8 @@ where $W_t$ is the diagonal matrix of weights
 
 $$ w_{i;t}=\frac{ \tau I(y_i \ge X_i \hat\beta_{\tau;t} ) + (1- \tau ) I(y_i < X_i \hat\beta_{\tau;t} ) }{\sqrt{(y_i - X_i \hat\beta_{\tau;t})^2}} $$
 
+[^4]<sup>,</sup>[^5]
+
 ##
 
 ### Federated LQR Algorithm
@@ -73,10 +75,12 @@ $$ w_{i;t}=\frac{ \tau I(y_i \ge X_i \hat\beta_{\tau;t} ) + (1- \tau ) I(y_i < X
 
 ### References
 
-[^1]: Schnabel, S. K., & Eilers, P. H. C. (2013). Simultaneous estimation of quantile curves using quantile sheets. AStA Advances in Statistical Analysis, 97(1), 77–87. https://doi.org/10.1007/s10182-012-0198-1
+[^1]: Furno, M., & Vistocco, D. (2018). Quantile regression: Estimation and simulation. In Quantile Regression: Theory and Applications. wiley. https://doi.org/10.1002/9781118863718
 
 [^2]: Waltrup, L. S., Sobotka, F., Kneib, T., & Kauermann, G. (2015). Expectile and quantile regression—David and Goliath? Statistical Modelling, 15(5), 433–456. https://doi.org/10.1177/1471082X14561155 
 
-[^3]: Powell, J. (1991) Estimation of Monotonic Regression Models under Quantile Restrictions, in Nonparametric and Semiparametric Methods in Econometrics, W. Barnett, J. Powell, and G Tauchen (eds.), Cambridge U. Press 
+[^3]: Schnabel, S. K., & Eilers, P. H. C. (2013). Simultaneous estimation of quantile curves using quantile sheets. AStA Advances in Statistical Analysis, 97(1), 77–87. https://doi.org/10.1007/s10182-012-0198-1
 
-[^4]: Kato, K. (2012). Asymptotic normality of Powell’s kernel estimator. Annals of the Institute of Statistical Mathematics, 64(2), 255–273. https://doi.org/10.1007/s10463-010-0310-9 
+[^4]: Powell, J. (1991) Estimation of Monotonic Regression Models under Quantile Restrictions, in Nonparametric and Semiparametric Methods in Econometrics, W. Barnett, J. Powell, and G Tauchen (eds.), Cambridge U. Press 
+
+[^5]: Kato, K. (2012). Asymptotic normality of Powell’s kernel estimator. Annals of the Institute of Statistical Mathematics, 64(2), 255–273. https://doi.org/10.1007/s10463-010-0310-9 
