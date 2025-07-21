@@ -24,7 +24,7 @@ $$ |y_i-q|=\frac{1}{\sqrt{(y_i-q)^2}}(y_i-q)^2 $$
 
 so that $\beta_\tau$ can be solved by
 
-$$ \hat{\beta_\tau}=(X'WX)^{-1}X'Wy$$
+$$ \hat{\beta_\tau}=(X\'WX)^{-1}X\'Wy $$
 
 where W is the diagonal matrix of weights given by
 
