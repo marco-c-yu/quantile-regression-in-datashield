@@ -1,7 +1,7 @@
 # Technical Note: Linear Quantile Regression (LQR)
 
 ## Outline
-[Introduction to Quantile Regression (QR)](Introduction to Quantile Regression (QR)) 
+[Introduction to Quantile Regression (QR)](#introduction-to-quantile-regression-(qr)) 
 
 ### Introduction to Quantile Regression (QR)
 
