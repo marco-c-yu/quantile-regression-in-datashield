@@ -6,9 +6,7 @@ $$ q=Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau) $$
 
 $q=Q_{Y|X}(\tau)$ represents the $\tau$-th conditional quantile of the response variable Y given the predictors X.
 
-
-
-
+ 
 
 For linear quantile regression
 
