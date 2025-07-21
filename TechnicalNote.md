@@ -7,7 +7,7 @@
 
 [Linear Quantile Regression (LQR)](#linear-quantile-regression-lqr) 
 
-[Iteratively Reweighted Least Squares method for LQR](#iteratively-reweighted-least-squares-method-for-lqr) 
+[Iteratively Reweighted Least Squares (IRLS) method for LQR](#iteratively-reweighted-least-squares-irls-method-for-lqr) 
 
 [Federated LQR Algorithm](#federated-lqr-algorithm) 
 
@@ -39,7 +39,7 @@ $Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau)=X\beta_\tau$ can be solved by
 
 $$ \beta_\tau = {arg\max} \\{ \sum_{y_i \ge X_i\beta_\tau} [\tau|y_i-X_i\beta_\tau|] + \sum_{y_i < X_i\beta_\tau} [(1-\tau)|y_i-X_i\beta_\tau|] \\} $$
 
-### Iteratively Reweighted Least Squares method for LQR
+### Iteratively Reweighted Least Squares (IRLS) method for LQR
 
 By considering 
 
