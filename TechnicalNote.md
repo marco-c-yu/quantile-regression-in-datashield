@@ -33,9 +33,11 @@ In **Linear Quantile Regression (LQR)**[^1]<sup>,</sup>[^2] model, the condition
 
 $$ Q_{Y|X}(\tau)=X\beta_\tau $$
 
-where X is a $(n \times p)$-dimensional matrix with element $x_{ij}$ represents the observed j-th predictor value of the i-th subject,
+where X is a $(n \times p)$-dimensional matrix with element $x_{ij}$ representing the observed j-th predictor value of the i-th subject,
 
-and $\beta_\tau$ is a p-dimensional column vector of regression coefficients estimated for that specific quantile $\tau$.
+y is a $(n \times 1)$-dimentional column vector with element $y_i$ representing the observed response value of the i-th subject,
+
+and $\beta_\tau$ is a $(p \times 1)$-dimensional column vector of regression coefficients estimated for that specific quantile $\tau$.
 
 $Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau)=X\beta_\tau$ can be solved by
 
