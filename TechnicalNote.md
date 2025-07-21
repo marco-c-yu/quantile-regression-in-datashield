@@ -3,19 +3,19 @@
 
 ### Outline
 
-[Conditional Quantile Function](#conditional-quantile-function) 
+[Conditional Quantile Function](#cqf) 
 
 [Linear Quantile Regression (LQR)](#linear-quantile-regression-lqr) 
 
-[Iteratively Reweighted Least Squarees method for LQR](#iteratively-reweighted-least-squares-method-for-lqr) 
+[Iteratively Reweighted Least Squarees method for LQR](#lqr) 
 
-[Federated LQR Algorithm](#federated-lqr-algorithm) 
+[Federated LQR Algorithm](#flqr) 
 
 [References](#references) 
 
 ##
 
-### Conditional Quantile Function
+### Conditional Quantile Function {#cqf}
 
 The $\tau$-th conditional quantile function of the response variable Y given the predictors X is defined as
 
@@ -25,7 +25,7 @@ where $F_{Y|X}$ is the cumulative distribution function (CDF) of Y given X.
 
 ##
 
-### Linear Quantile Regression (LQR)
+### Linear Quantile Regression (LQR) {#lqr}
 
 In **Linear Quantile Regression (LQR)** model, the conditional quantile function is assumed to be a linear combination of the predictors X:
 
@@ -39,8 +39,7 @@ $Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau)=X\beta_\tau$ can be solved by
 
 $$ \beta_\tau = {arg\max} \\{ \sum_{y_i \ge X_i\beta_\tau} [\tau|y_i-X_i\beta_\tau|] + \sum_{y_i < X_i\beta_\tau} [(1-\tau)|y_i-X_i\beta_\tau|] \\} $$
 
-### Iteratively Reweighted Least Squarees method for LQR
-[^1]<sup>,</sup>[^2]
+### Iteratively Reweighted Least Squarees method for LQR [^1]<sup>,</sup>[^2] {#irls}
 
 By considering 
 
@@ -66,7 +65,7 @@ $$ w_{i;t}=\frac{ \tau I(y_i \ge X_i \hat\beta_{\tau;t} ) + (1- \tau ) I(y_i < X
 
 ##
 
-### Federated LQR Algorithm
+### Federated LQR Algorithm {#flqr}
 
 ##
 
