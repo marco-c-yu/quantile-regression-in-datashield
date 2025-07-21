@@ -19,7 +19,7 @@ The $\tau$-th conditional quantile function of the response variable Y given the
 
 $$ Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau) $$
 
-, where $F_{Y|X}$ is the cumulative distribution function (CDF) of Y given X.
+where $F_{Y|X}$ is the cumulative distribution function (CDF) of Y given X.
 
 ##
 
@@ -29,15 +29,13 @@ In **Linear Quantile Regression (LQR)** model, the conditional quantile function
 
 $$ Q_{Y|X}(\tau)=X\beta_\tau $$
 
-, where X is a $(n \times p)$-dimensional matrix with element $x_{ij}$ represents the observed j-th predictor value of the i-th subject,
+where X is a $(n \times p)$-dimensional matrix with element $x_{ij}$ represents the observed j-th predictor value of the i-th subject,
 
 and $\beta_\tau$ is a p-dimensional column vector of regression coefficients estimated for that specific quantile $\tau$.
 
 $Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau)=X\beta_\tau$ can be solved by
 
 $$ \beta_\tau = {arg\max} \\{ \sum_{y_i \ge X_i\beta_\tau} [\tau|y_i-X_i\beta_\tau|] + \sum_{y_i < X_i\beta_\tau} [(1-\tau)|y_i-X_i\beta_\tau|] \\} $$
-
-.
 
 By considering 
 
@@ -51,13 +49,13 @@ where
 
 $$ w_i=\frac{ \tau I(y_i \ge X_i\beta_\tau ) + (1- \tau ) I(y_i < X_i\beta_\tau ) }{\sqrt{(y_i-X_i\beta_\tau)^2}} $$
 
-It can be treated as an **Iteratively Reweighted Least Squares (IRLS)**[^1]<sup>,</sup>[^2], so that $\beta_\tau$ can be solved iteratively by
+It can be considered as an **Iteratively Reweighted Least Squares (IRLS)**[^1]<sup>,</sup>[^2], so that $\beta_\tau$ can be solved iteratively by
 
 $$ \beta_\tau(t+1) = {arg\max} \\{ \sum_{y_i} [w_i(t)(y_i-X_i\beta_\tau)^2] \\} = (X^TW(t)X)^{-1}X^TW(t)y $$
 
 where W(t) is the diagonal matrix of weights
 
-$$ w_i(t)=\frac{ \tau I(y_i \ge X_i\beta_\tau(t) ) + (1- \tau ) I(y_i < X_i\beta_\tau(t) ) }{\sqrt{(y_i-q)^2}} $$
+$$ w_i(t)=\frac{ \tau I(y_i \ge X_i\beta_\tau(t) ) + (1- \tau ) I(y_i < X_i\beta_\tau(t) ) }{\sqrt{(y_i - X_i\beta_\tau(t))^2}} $$
 
 ##
 
