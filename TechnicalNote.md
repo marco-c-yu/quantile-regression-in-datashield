@@ -41,7 +41,7 @@ $$ \beta_\tau = {arg\max} \\{ \sum_{y_i \ge X_i\beta_\tau} [\tau|y_i-X_i\beta_\t
 
 ### Iteratively Reweighted Least Squares method for LQR
 
-[^1]<sup>,</sup>[^2]By considering 
+By considering 
 
 $$ |y_i-X_i\beta_\tau|=\frac{1}{\sqrt{(y_i-X_i\beta_\tau)^2}}(y_i-X_i\beta_\tau)^2 $$
 
@@ -53,7 +53,7 @@ where
 
 $$ w_i=\frac{ \tau I(y_i \ge X_i\beta_\tau ) + (1- \tau ) I(y_i < X_i\beta_\tau ) }{\sqrt{(y_i-X_i\beta_\tau)^2}} $$
 
-It can be considered as an **Iteratively Reweighted Least Squares (IRLS)**, so that $\beta_\tau$ can be esimated iteratively by 
+It can be considered as an **Iteratively Reweighted Least Squares (IRLS)**[^1]<sup>,</sup>[^2], so that $\beta_\tau$ can be esimated iteratively by 
 $\hat\beta_\tau = \lim_{n\to\infty} \hat\beta_{\tau;t}$, 
 such that
 
