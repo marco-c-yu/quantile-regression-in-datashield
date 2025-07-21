@@ -1,5 +1,13 @@
 # Technical Note: Linear Quantile Regression (LQR)
 
-Quantile regression 
-$$Q_{Y|X}(\tau)={arg\,max}(y:F_{Y|X}(y)\ge\tau)$$
-$$\beta_\tau = {arg\,max} \\{ \sum_{i=1}^{n} [s] \\} $$
+Quantile regression can be formulated as
+
+$$q=Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau)$$
+
+For linear quantile regression
+
+$$Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau)=X\beta_\tau$$
+
+which can be solved by
+
+$$\beta_\tau = {arg\max} \\{ \sum_{i=1}^{n} [\tau|y_i-q|] + \sum_{i=1}^{n} [(1-\tau)|y_i-q|] \\} $$
