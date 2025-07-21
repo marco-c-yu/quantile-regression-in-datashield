@@ -51,7 +51,9 @@ $$ w_i=\frac{ \tau I(y_i \ge X_i\beta_\tau ) + (1- \tau ) I(y_i < X_i\beta_\tau 
 
 It can be considered as an **Iteratively Reweighted Least Squares (IRLS)**[^1]<sup>,</sup>[^2], so that $\beta_\tau$ can be solved iteratively by
 
-$$ \hat{\beta_\tau} = \lim_{n\to\infty}$\beta_{\tau;t+1} $$
+$$ \hat{\beta_\tau} = \lim_{n\to\infty} \beta_{\tau;t} $$
+
+such that
 
 $$ \beta_{\tau;t+1} = {arg\max} \\{ \sum_{y_i} [w_{i;t}(y_i-X_i\beta_{\tau;t})^2] \\} = (X^TW_tX)^{-1}X^TW_ty $$
 
