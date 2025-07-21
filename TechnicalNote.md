@@ -1,6 +1,7 @@
 # Technical Note: Linear Quantile Regression (LQR)
 
-## Outline
+### Outline
+
 [Introduction to Quantile Regression (QR)](#introduction-to-quantile-regression-qr) 
 
 [Linear Quantile Regression (LQR)](#linear-quantile-regression-lqr) 
@@ -19,6 +20,8 @@ $$ q=Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau) $$
 
 where $q=Q_{Y|X}(\tau)$ represents the $\tau$-th conditional quantile of the response variable Y given the predictors X.
 
+## 
+
 ### Linear Quantile Regression (LQR)
 
 For **Linear Quantile Regression (LQR)**,
@@ -32,6 +35,7 @@ It can be solved by
 $$ \beta_\tau = {arg\max} \\{ \sum_{y_i \ge X_i\beta_\tau} [\tau|y_i-X_i\beta_\tau|] + \sum_{y_i < X_i\beta_\tau} [(1-\tau)|y_i-X_i\beta_\tau|] \\} $$
 
 ## 
+
 By considering 
 $|y_i-X_i\beta_\tau|=\frac{1}{\sqrt{(y_i-X_i\beta_\tau)^2}}(y_i-X_i\beta_\tau)^2$,
 
