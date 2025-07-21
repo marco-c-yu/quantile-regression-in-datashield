@@ -1,9 +1,11 @@
 # Technical Note: Linear Quantile Regression (LQR)
 
 ## Outline
-[1]: Introduction to Quantile Regression (QR)
+[Introduction to Quantile Regression (QR)](#Introduction to Quantile Regression (QR)) 
 
-[1] **Quantile Regression (QR)** can be formulated as
+### Introduction to Quantile Regression (QR)
+
+**Quantile Regression (QR)** can be formulated as
 
 $$ q=Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau) $$
 
