@@ -10,4 +10,4 @@ $$Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau)=X\beta_\tau$$
 
 which can be solved by
 
-$$\beta_\tau = {arg\max} \\{ \sum_{i=1}^{n} [\tau|y_i-q|] + \sum_{i=1}^{n} [(1-\tau)|y_i-q|] \\} $$
+$$\beta_\tau = {arg\max} \\{ \sum_{y_i \ge q} [\tau|y_i-q|] + \sum_{y_i < q} [(1-\tau)|y_i-q|] \\} $$
