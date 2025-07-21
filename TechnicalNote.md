@@ -24,8 +24,8 @@ $$ |y_i-q|=\frac{1}{\sqrt{(y_i-q)^2}}(y_i-q)^2 $$
 
 so that $\beta_\tau$ can be solved iteratively by
 
-$$ \beta_\tau^{t+1} = {arg\max} \\{ \sum_{y_i} [w_i(y_i-q)^2] \\} = (X^TWX)^{-1}X^TWy $$
+$$ \beta_\tau(t+1) = {arg\max} \\{ \sum_{y_i} [w_i(t)(y_i-q)^2] \\} = (X^TW(t)X)^{-1}X^TW(t)y $$
 
-where W is the diagonal matrix of weights
+where W(t) is the diagonal matrix of weights
 
-$$ w_i=\frac{ \tau I(y_i \ge X_i\beta_\tau^t) + (1- \tau ) I(y_i < X_i\beta_\tau^t) }{\sqrt{(y_i-q)^2}} $$
+$$ w_i(t)=\frac{ \tau I(y_i \ge X_i\beta_\tau(t) ) + (1- \tau ) I(y_i < X_i\beta_\tau(t) ) }{\sqrt{(y_i-q)^2}} $$
