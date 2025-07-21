@@ -43,6 +43,8 @@ $Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau)=X\beta_\tau$ can be solved by
 
 $$ \beta_\tau = {arg\max} \\{ \sum_{y_i \ge X_i\beta_\tau} [\tau|y_i-X_i\beta_\tau|] + \sum_{y_i < X_i\beta_\tau} [(1-\tau)|y_i-X_i\beta_\tau|] \\} $$
 
+where $X_i=\\{x_{i1},...,x_{ip}\\}$ is a $(1 \times p)$-dimensional row vector of the predictor values for the i-th subject.
+
 ### Iteratively Reweighted Least Squares (IRLS) method for LQR
 
 By considering 
