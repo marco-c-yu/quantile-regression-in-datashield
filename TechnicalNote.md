@@ -1,6 +1,5 @@
 # Technical Note: Linear Quantile Regression (LQR)
 
-## 
 **Quantile Regression (QR)** can be formulated as
 
 $$ q=Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau) $$
@@ -38,4 +37,15 @@ where W(t) is the diagonal matrix of weights
 
 $$ w_i(t)=\frac{ \tau I(y_i \ge X_i\beta_\tau(t) ) + (1- \tau ) I(y_i < X_i\beta_\tau(t) ) }{\sqrt{(y_i-q)^2}} $$
 
+[^1],[^2]
 
+##
+**Reference:**
+
+[^1]Schnabel, S. K., & Eilers, P. H. C. (2013). Simultaneous estimation of quantile curves using quantile sheets. AStA Advances in Statistical Analysis, 97(1), 77–87. https://doi.org/10.1007/s10182-012-0198-1
+
+[^2]Waltrup, L. S., Sobotka, F., Kneib, T., & Kauermann, G. (2015). Expectile and quantile regression—David and Goliath? Statistical Modelling, 15(5), 433–456. https://doi.org/10.1177/1471082X14561155 
+
+[^3]Powell, J. (1991) Estimation of Monotonic Regression Models under Quantile Restrictions, in Nonparametric and Semiparametric Methods in Econometrics, W. Barnett, J. Powell, and G Tauchen (eds.), Cambridge U. Press 
+
+[^4]Kato, K. (2012). Asymptotic normality of Powell’s kernel estimator. Annals of the Institute of Statistical Mathematics, 64(2), 255–273. https://doi.org/10.1007/s10463-010-0310-9 
