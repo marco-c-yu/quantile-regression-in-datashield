@@ -1,4 +1,4 @@
-# Linear Quantile Regression (LQR) in DataSHIELD (a federated quantile regression)
+# Linear Quantile Regression (LQR) in DataSHIELD (a horizontal federated quantile regression method)
 
 **Content of this repository is part of a working paper affiliate with Singapore Eye Research Institute.**
 
@@ -11,6 +11,8 @@ The R scripts were developed under R version 4.1.2 for performing linear quantil
 Regression coefficients were estimated by Iterative Weighted Least Squares (IWLS). [^1]<sup>,</sup>[^2] 
 
 Variance of regression coefficients were estimated by Powell’s kernel estimator. [^3]<sup>,</sup>[^4]
+
+The mathematical detail of this horizontal federated quantile regression is described in **[TechnicalNote.md](TechnicalNote.md)**
 
 ##
 **Reference:**
