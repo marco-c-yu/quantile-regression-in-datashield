@@ -18,9 +18,8 @@
 The $\tau$-th conditional quantile function of the response variable Y given the predictors X is defined as
 
 $$ Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau) $$
-,
 
-where $F_{Y|X}$ is the cumulative distribution function (CDF) of Y given X.
+, where $F_{Y|X}$ is the cumulative distribution function (CDF) of Y given X.
 
 ##
 
@@ -30,13 +29,14 @@ In **Linear Quantile Regression (LQR)** model, the conditional quantile function
 
 $$ Q_{Y|X}(\tau)=X\beta_\tau $$
 
-where X is a $(n \times p)$-dimensional matrix with element $x_{ij}$ represents the observed j-th predictor value of the i-th subject,
+, where X is a $(n \times p)$-dimensional matrix with element $x_{ij}$ represents the observed j-th predictor value of the i-th subject,
 
 and $\beta_\tau$ is a p-dimensional column vector of regression coefficients estimated for that specific quantile $\tau$.
 
 $Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau)=X\beta_\tau$ can be solved by
 
 $$ \beta_\tau = {arg\max} \\{ \sum_{y_i \ge X_i\beta_\tau} [\tau|y_i-X_i\beta_\tau|] + \sum_{y_i < X_i\beta_\tau} [(1-\tau)|y_i-X_i\beta_\tau|] \\} $$
+
 .
 
 By considering 
