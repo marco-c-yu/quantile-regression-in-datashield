@@ -20,8 +20,9 @@ $$ \beta_\tau = {arg\max} \\{ \sum_{y_i \ge X_i\beta_\tau} [\tau|y_i-X_i\beta_\t
 
 ## 
 By considering 
-
 $|y_i-X_i\beta_\tau|=\frac{1}{\sqrt{(y_i-X_i\beta_\tau)^2}}(y_i-X_i\beta_\tau)^2$,
+
+We have
 
 $$ \beta_\tau = {arg\max} \\{ \sum_{y_i} [w_i(y_i-X_i\beta_\tau)^2] \\} $$
 
@@ -29,9 +30,7 @@ where
 
 $$ w_i=\frac{ \tau I(y_i \ge X_i\beta_\tau ) + (1- \tau ) I(y_i < X_i\beta_\tau ) }{\sqrt{(y_i-X_i\beta_\tau)^2}} $$
 
-It can also be treated as an **Iterative Weighted Least Squares (IWLS)** 
-
-so that $\beta_\tau$ can be solved iteratively by
+It can also be treated as an **Iterative Weighted Least Squares (IWLS)**, so that $\beta_\tau$ can be solved iteratively by
 
 $$ \beta_\tau(t+1) = {arg\max} \\{ \sum_{y_i} [w_i(t)(y_i-X_i\beta_\tau)^2] \\} = (X^TW(t)X)^{-1}X^TW(t)y $$
 
