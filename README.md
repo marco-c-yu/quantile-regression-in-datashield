@@ -1,4 +1,4 @@
-# Linear Quantile Regression (LQR) in DataSHIELD <br>- A horizontal federated quantile regression method
+# Linear Quantile Regression (LQR) in DataSHIELD <br>- A Horizontal Federated Quantile Regression Method
 
 **Content of this repository is part of a working paper affiliate with Singapore Eye Research Institute.**
 
