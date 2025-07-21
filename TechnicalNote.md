@@ -1,4 +1,4 @@
-# Technical Note: Linear Quantile Regression (LQR)
+# Technical Note: Horizontal Federated Linear Quantile Regression (LQR)
 
 
 ### Contents
@@ -9,7 +9,7 @@
 
 [Iteratively Reweighted Least Squares (IRLS) method for LQR](#iteratively-reweighted-least-squares-irls-method-for-lqr) 
 
-[Federated LQR Algorithm](#federated-lqr-algorithm) 
+[Horizontal Federated LQR Algorithm](#horizontal-federated-lqr-algorithm) 
 
 [References](#references) 
 
@@ -69,7 +69,16 @@ $$ w_{i;t}=\frac{ \tau I(y_i \ge X_i \hat\beta_{\tau;t} ) + (1- \tau ) I(y_i < X
 
 ##
 
-### Federated LQR Algorithm
+### Horizontal Federated LQR Algorithm
+
+A **federated learning system** is a learning process trained on data sets distributed across multiple parties while preventing data leakage.
+
+**Horizontal Federated Learning (a.k.a. sample-based federated learning)** refers to the scenarios that all data sets share the same feature space but with different sample space.[^6]
+
+There are other categories of federated learning, including **Vertical Federated Learning** and **Federated Transfer Learning**, which will not be discussed here.
+
+
+[^7]
 
 ##
 
@@ -84,3 +93,7 @@ $$ w_{i;t}=\frac{ \tau I(y_i \ge X_i \hat\beta_{\tau;t} ) + (1- \tau ) I(y_i < X
 [^4]: Powell, J. (1991) Estimation of Monotonic Regression Models under Quantile Restrictions, in Nonparametric and Semiparametric Methods in Econometrics, W. Barnett, J. Powell, and G Tauchen (eds.), Cambridge U. Press 
 
 [^5]: Kato, K. (2012). Asymptotic normality of Powell’s kernel estimator. Annals of the Institute of Statistical Mathematics, 64(2), 255–273. https://doi.org/10.1007/s10463-010-0310-9 
+
+[^6]: Yang, Q., Liu, Y., Chen, T., & Tong, Y. (2019). Federated Machine Learning: Concept and Applications. ACM Transactions on Intelligent Systems and Technology, 10(2), 19. https://doi.org/10.1145/3298981
+
+[^7]: Cellamare, M., van Gestel, A. J., Alradhi, H., Martin, F., & Moncada-Torres, A. (2022). A Federated Generalized Linear Model for Privacy-Preserving Analysis. Algorithms 2022, Vol. 15, Page 243, 15(7), 243. https://doi.org/10.3390/A15070243
