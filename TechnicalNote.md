@@ -93,7 +93,12 @@ $J_\tau$ can be estimated by the Powell's kernel estimator[^5]<sup>,</sup>[^6]
 
 $$ \hat J_\tau = \frac{1}{nh} \sum_{i}^{n} K(\frac{y_i - X_i \hat\beta_\tau}{h}) X_i^T X_i $$
 
-where $K(\cdot)$ is the uniform kernel $K(u) = \frac{1}{2} I(|u| \le 1)$
+where $K(\cdot)$ is the uniform kernel $K(u) = \frac{1}{2} I(|u| \le 1)$.
+
+The bandwidth h can be selected following the same computation in **summary.rq** function in the **quantreg** package in **R**.[^7]
+
+> $h = n^(-1/3) \times \Phi^{-1}(1 - \alpha/2)^{2/3} \times ((1.5 \times (\phi(\Phi^{-1}(\tau)))^2)/(2 \times (\Phi^{-1}(\tau))^2 + 1))^(1/3)$
+> While (\tau - h < 0) OR (\tau + h > 1), replace h by h/2
 
 ##
 
@@ -101,7 +106,7 @@ where $K(\cdot)$ is the uniform kernel $K(u) = \frac{1}{2} I(|u| \le 1)$
 
 A **federated learning system** is a learning process trained on data sets distributed across multiple parties while preventing data leakage.
 
-**Horizontal Federated Learning (a.k.a. sample-based federated learning)** refers to the scenarios that all data sets share the same feature space but with different sample space.[^7]
+**Horizontal Federated Learning (a.k.a. sample-based federated learning)** refers to the scenarios that all data sets share the same feature space but with different sample space.[^8]
 
 There are other categories of federated learning, including **Vertical Federated Learning** and **Federated Transfer Learning**, which will not be discussed here.
 
@@ -111,7 +116,7 @@ There are other categories of federated learning, including **Vertical Federated
 
 In [1.3](#13-iteratively-reweighted-least-squares-irls-method-for-lqr), we showed that the regression coefficients of LQR can be solved by IRLS,
 
-it is similar to the algorithm for solving federated generalized linear model (GLM).[^8]
+it is similar to the algorithm for solving federated generalized linear model (GLM).[^9]
 
 The proposed algorithms for regression coefficients and variance of coefficients estimation of horizontal federated LQR are listed as follow:
 
@@ -139,6 +144,8 @@ The proposed algorithms for regression coefficients and variance of coefficients
 
 [^6]: Kato, K. (2012). Asymptotic normality of Powell’s kernel estimator. Annals of the Institute of Statistical Mathematics, 64(2), 255–273. https://doi.org/10.1007/s10463-010-0310-9 
 
-[^7]: Yang, Q., Liu, Y., Chen, T., & Tong, Y. (2019). Federated Machine Learning: Concept and Applications. ACM Transactions on Intelligent Systems and Technology, 10(2), 19. https://doi.org/10.1145/3298981
+[^7]: Roger Koenker (2022). quantreg: Quantile Regression. R package version 5.94. https://CRAN.R-project.org/package=quantreg
 
-[^8]: Cellamare, M., van Gestel, A. J., Alradhi, H., Martin, F., & Moncada-Torres, A. (2022). A Federated Generalized Linear Model for Privacy-Preserving Analysis. Algorithms 2022, Vol. 15, Page 243, 15(7), 243. https://doi.org/10.3390/A15070243
+[^8]: Yang, Q., Liu, Y., Chen, T., & Tong, Y. (2019). Federated Machine Learning: Concept and Applications. ACM Transactions on Intelligent Systems and Technology, 10(2), 19. https://doi.org/10.1145/3298981
+
+[^9]: Cellamare, M., van Gestel, A. J., Alradhi, H., Martin, F., & Moncada-Torres, A. (2022). A Federated Generalized Linear Model for Privacy-Preserving Analysis. Algorithms 2022, Vol. 15, Page 243, 15(7), 243. https://doi.org/10.3390/A15070243
