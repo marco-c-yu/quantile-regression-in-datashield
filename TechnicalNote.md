@@ -146,7 +146,8 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > <br>
 > In each party node, m, <br>
 > 4: compute $u_m=(y_m - X_m \hat\beta_\tau)$ <br>
-> 5: compute the sample mean and variance of $u_m$ <br>
+> 5: compute the sample mean $\bar u_m$ and variance $v(u_m)$ of $u_m$ <br>
+> 6: compute the sum of squares of $u_m$, $\sum_{i} u_{m,i}^2 = (n_m-1)v(u_m) + n_m \times \bar u_m^2$ <br>
 > <br>
 > In server, <br>
 > 6: compute $var(u)=\frac{1}{n-1} [\sum_{} u^2 - (\sum_{} u)^2/n]$ <br>
