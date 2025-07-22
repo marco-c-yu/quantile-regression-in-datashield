@@ -123,13 +123,13 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > 1: initialize a global inital estimation, $\beta_{\tau;0}$ <br>
 > In each party node, for $(t \ge 0)$, compute  <br>
 > 2: $w_{m,i;t}=\frac{ \tau I(y_m,i \ge X_m,i \hat\beta_{\tau;t} ) + (1- \tau ) I(y_m,i < X_m,i \hat\beta_{\tau;t} ) }{\sqrt{(y_m,i - X_m,i \hat\beta_{\tau;t})^2 + \Delta^2}}$ <br>
-> 3) the weighted predictors $(W_{m,t}^{1/2}X_m)$ and weighted response $(W_{m,t}^{1/2}y_m)$ <br>
-> 4) $(X_m^TW_{m,t}X_m)$ and $(X_m^TW_{m,t}y_m)$ <br>
+> 3: the weighted predictors $(W_{m,t}^{1/2}X_m)$ and weighted response $(W_{m,t}^{1/2}y_m)$ <br>
+> 4: $(X_m^TW_{m,t}X_m)$ and $(X_m^TW_{m,t}y_m)$ <br>
 > In server, compute  <br> <br>
-> 5) $(X^TW_tX) = \sum_m (X_m^TW_{m,t}X_m)$ and $(X^TW_tX) = \sum_m (X_m^TW_{m,t}y_m)$ <br>
-> 6) solve the matrix inverse $(X^TW_tX)^{-1}$ <br>
-> 7) compute $\beta_{\tau;t+1} = (X^TW_tX)^{-1}X^TW_ty$ <br>
-> 8) replace $t$ by $t+1$ <br>
+> 5: $(X^TW_tX) = \sum_m (X_m^TW_{m,t}X_m)$ and $(X^TW_tX) = \sum_m (X_m^TW_{m,t}y_m)$ <br>
+> 6: solve the matrix inverse $(X^TW_tX)^{-1}$ <br>
+> 7: compute $\beta_{\tau;t+1} = (X^TW_tX)^{-1}X^TW_ty$ <br>
+> 8: replace $t$ by $t+1$ <br>
 > Repeat steps 2-8 until $|\beta_{\tau;t}-\beta_{\tau;t-1}|<\delta$, for some pre-specified small tolerence value $\delta$  <br>
 > The regression coefficients estimation will be given by $\beta_{\tau;t}$ <br>
 
