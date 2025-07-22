@@ -71,6 +71,13 @@ where $W_t$ is the diagonal matrix of weights
 
 $$ w_{i;t}=\frac{ \tau I(y_i \ge X_i \hat\beta_{\tau;t} ) + (1- \tau ) I(y_i < X_i \hat\beta_{\tau;t} ) }{\sqrt{(y_i - X_i \hat\beta_{\tau;t})^2}} $$
 
+In practice, it is suggested to approximate the weights by adding a small value $\Delta^2$ in the denominator:
+
+$$ w_{i;t}=\frac{ \tau I(y_i \ge X_i \hat\beta_{\tau;t} ) + (1- \tau ) I(y_i < X_i \hat\beta_{\tau;t} ) }{\sqrt{(y_i - X_i \hat\beta_{\tau;t})^2 + \Delta^2}} $$
+
+for numerical stability.
+
+
 Under suitable regularity conditions[^4], $\hat\beta_\tau$ satisfies consistency and asymptotic normality
 
 <sup>,</sup>[^5]<sup>,</sup>[^6]
