@@ -91,7 +91,7 @@ $\Sigma_\tau = \tau(1-\tau) E(X^TX)$
 
 $J_\tau$ can be estimated by the Powell's kernel estimator[^5]<sup>,</sup>[^6]
 
-$$ \hat J_\tau = \frac{1}{nh} \sum_{i}^{n} K(\frac{y_i - X_i \hat\beta_\tau}{h}) X_i^T X_i $$
+$$ \hat J_\tau = \frac{1}{nh} \sum_{i=1}^{n} K(\frac{y_i - X_i \hat\beta_\tau}{h}) X_i^T X_i $$
 
 where $K(\cdot)$ is the uniform kernel $K(u) = \frac{1}{2} I(|u| \le 1)$.
 
@@ -120,7 +120,7 @@ The proposed algorithms for regression coefficients and variance of coefficients
 
 > #### Algorithm 1: regression coefficients estimation of horizontal federated LQR <br>
 > In server, <br>
-> 1: initialize a global inital estimation, $\beta_{\tau;0}$ <br>
+> 1: initialize an inital estimatior, $\beta_{\tau;0}$ <br>
 > <br>
 > In each party node, m, for $(t \ge 0)$, <br>
 > 2: compute $w_{m,i;t}=\frac{ \tau I(y_m,i \ge X_m,i \hat\beta_{\tau;t} ) + (1- \tau ) I(y_m,i < X_m,i \hat\beta_{\tau;t} ) }{\sqrt{(y_m,i - X_m,i \hat\beta_{\tau;t})^2 + \Delta^2}}$ <br>
@@ -128,13 +128,17 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > 4: compute $(X_m^TW_{m,t}X_m)$ and $(X_m^TW_{m,t}y_m)$ <br>
 > <br>
 > In server, <br>
-> 5: comppute $(X^TW_tX) = \sum_m (X_m^TW_{m,t}X_m)$ and $(X^TW_tX) = \sum_m (X_m^TW_{m,t}y_m)$ <br>
+> 5: comppute $(X^TW_tX) = \sum_m (X_m^TW_{m,t}X_m)$ and $(X^TW_ty) = \sum_m (X_m^TW_{m,t}y_m)$ <br>
 > 6: solve the matrix inverse $(X^TW_tX)^{-1}$ <br>
 > 7: compute $\beta_{\tau;t+1} = (X^TW_tX)^{-1}X^TW_ty$ <br>
 > 8: replace $t$ by $t+1$ <br>
 > <br>
-> Repeat steps 2-8 until $|\beta_{\tau;t}-\beta_{\tau;t-1}|<\delta$, for some pre-specified small tolerence value $\delta$ <br>
-> The regression coefficients estimation will be given by $\beta_{\tau;t}$ <br>
+> 9: Repeat steps 2-8 until $|\beta_{\tau;t}-\beta_{\tau;t-1}|<\delta$, for some pre-specified small tolerence value $\delta$. <br>
+> 10: After the end loop of step 9, $\beta_{\tau;t}$ is the IRLS estimator of the regression coefficients of LQR. <br>
+> <br>
+> Remark: <br>
+> $y_m$ and $X_m$ represents the observed response and predictors in the m-th party. <br>
+> $(X_m^TW_{m,t}X_m)$ and $(X_m^TW_{m,t}y_m)$ can be computed by the mean and covariance matrix of $(W_{m,t}^{1/2}X_m)$ and $(W_{m,t}^{1/2}y_m)$ based on $Cov(X,Y)=E(XY)-E(X)E(Y)$ <br>
 
 ##
 
