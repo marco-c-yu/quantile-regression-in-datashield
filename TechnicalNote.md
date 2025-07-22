@@ -89,9 +89,9 @@ There are other categories of federated learning, including **Vertical Federated
 
 ### Horizontal Federated LQR Algorithm
 
-> sdfe
-> asdfe
-> asdfe
+> sdfe <br>
+> asdfe <br>
+> asdfe <br>
 
 [^8]
 
