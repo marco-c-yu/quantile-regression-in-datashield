@@ -4,13 +4,12 @@
 
 #### Developer
 
-[Marco, Chak Yan, YU](https://www.linkedin.com/in/marcocyyu/)
-
-[marcocyyu@gmail.com](mailto:marcocyyu@gmail.com) / [marcocyyu@outlook.com](mailto:marcocyyu@outlook.com)
+> [Marco, Chak Yan, YU](https://www.linkedin.com/in/marcocyyu/) <br>
+> [marcocyyu@gmail.com](mailto:marcocyyu@gmail.com) / [marcocyyu@outlook.com](mailto:marcocyyu@outlook.com) <br>
 
 #### License
 
-R script is made available under the GPL3 licence.
+> R script is made available under the GPL3 licence.
 
 ##
 
