@@ -89,7 +89,7 @@ There are other categories of federated learning, including **Vertical Federated
 
 ### Horizontal Federated LQR Algorithm
 
-> sdfe <br>
+> ###### Algorithm for estimating $\beta_\tau$ <br>
 > asdfe <br>
 > asdfe <br>
 
