@@ -138,11 +138,11 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > $(X_m^TW_{m,t}X_m)$ and $(X_m^TW_{m,t}y_m)$ can be derived from the mean and covariance matrix of $(W_{m,t}^{1/2}X_m)$ and $(W_{m,t}^{1/2}y_m)$ using the property $Cov(X,Y)=E(XY)-E(X)E(Y)$ <br>
 
 > #### Algorithm 2: Powell's kernel estimator of the variance of coefficients of horizontal federated LQR[^5]<sup>,</sup>[^6] <br>
-> 1: After obtaining the IRLS estimator of regression coefficients, $\hat\beta_\tau$, in Algorithm 1, <br>
+> 1: Obtain the IRLS estimator of regression coefficients, $\hat\beta_\tau$, in Algorithm 1. <br>
 > <br>
 > In server, <br>
-> 2: $h = n^{-1/3} \times \Phi^{-1}(1 - \alpha/2)^{2/3} \times \\{ \frac{ 1.5 \times [\phi(\Phi^{-1}(\tau))]^2 }{ 2 \times [\Phi^{-1}(\tau)]^2 + 1 } \\} ^{1/3}$, where $\alpha=0.05$. <br>
-> 3: While $(\tau-h <0)$ OR $(\tau+h >1)$, replace $h$ by $h/2$ until both while-conditions are false. <br>
+> 2: Compute $h = n^{-1/3} \times \Phi^{-1}(1 - \alpha/2)^{2/3} \times \\{ \frac{ 1.5 \times [\phi(\Phi^{-1}(\tau))]^2 }{ 2 \times [\Phi^{-1}(\tau)]^2 + 1 } \\} ^{1/3}$, where $\alpha=0.05$. <br>
+> 3: While $(\tau-h <0)$ OR $(\tau+h >1)$, replace $h$ by $h/2$ until both while-conditions in this step are false. <br>
 > <br>
 > In each party node, m, <br>
 > 4: compute $u_m=(y_m - X_m \hat\beta_\tau)$ <br>
