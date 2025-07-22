@@ -81,9 +81,11 @@ for numerical stability.
 
 Under suitable regularity conditions[^4], $\hat\beta_\tau$ is a $\sqrt{n}$-consistent estimator of $\beta_\tau$ and 
 
-$$\sqrt{n}(\hat\beta_\tau - \beta_\tau) \rightarrow N(0,\Sigma_\beta(\tau))$$
+$$\sqrt{n}(\hat\beta_\tau - \beta_\tau) \rightarrow N(0,\Sigma_{\beta,\tau})$$
 
-where $\Sigma_\beta(\tau) = J^{-1}(\tau) \Sigma(\tau) J^{-1}(\tau)$
+where $\Sigma_{\beta,\tau} = J_\tau^{-1} \Sigma_\tau J_\tau^{-1}$, 
+
+$J_\tau = E(f(X\beta_\tau|X) X^TX)$ and $\Sigma_\tau = \tau(1-\tau) E(X^TX)$
 
 <sup>,</sup>[^5]<sup>,</sup>[^6]
 
