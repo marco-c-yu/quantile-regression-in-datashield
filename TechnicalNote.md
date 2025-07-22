@@ -136,9 +136,9 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > 9: Repeat steps 2-8 until $|\beta_{\tau;t}-\beta_{\tau;t-1}|<\delta$, for some pre-specified small tolerence value $\delta$. <br>
 > 10: After the end loop of step 9, $\beta_{\tau;t}$ is the IRLS estimator of the regression coefficients of LQR. <br>
 > <br>
-> Remark: <br>
+> ###### Remarks:
 > $y_m$ and $X_m$ represents the observed response and predictors in the m-th party. <br>
-> $(X_m^TW_{m,t}X_m)$ and $(X_m^TW_{m,t}y_m)$ can be computed by the mean and covariance matrix of $(W_{m,t}^{1/2}X_m)$ and $(W_{m,t}^{1/2}y_m)$ based on $Cov(X,Y)=E(XY)-E(X)E(Y)$ <br>
+> $(X_m^TW_{m,t}X_m)$ and $(X_m^TW_{m,t}y_m)$ can be derived from the mean and covariance matrix of $(W_{m,t}^{1/2}X_m)$ and $(W_{m,t}^{1/2}y_m)$ using the property $Cov(X,Y)=E(XY)-E(X)E(Y)$ <br>
 
 ##
 
