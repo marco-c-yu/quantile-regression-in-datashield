@@ -77,8 +77,13 @@ $$ w_{i;t}=\frac{ \tau I(y_i \ge X_i \hat\beta_{\tau;t} ) + (1- \tau ) I(y_i < X
 
 for numerical stability.
 
+### 1.4 Asymptotic normality of the regression coefficients estimator of LQR
 
-Under suitable regularity conditions[^4], $\hat\beta_\tau$ satisfies consistency and asymptotic normality
+Under suitable regularity conditions[^4], $\hat\beta_\tau$ is a $\sqrt{n}$-consistent estimator of $\beta_\tau$ and 
+
+$$\sqrt{n}(\hat\beta_\tau - \beta_\tau) \rightarrow N(0,\Sigma_\beta(\tau))$$
+
+where $\Sigma_\beta(\tau) = J^{-1}(\tau) \Sigma(\tau) J^{-1}(\tau)$
 
 <sup>,</sup>[^5]<sup>,</sup>[^6]
 
