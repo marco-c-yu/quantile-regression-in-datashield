@@ -2,7 +2,18 @@
 
 **Content of this repository is part of a working paper affiliate with Singapore Eye Research Institute.**
 
+#### Developer
+
+[Marco, Chak Yan, YU](https://www.linkedin.com/in/marcocyyu/)
+
+[marcocyyu@gmail.com](mailto:marcocyyu@gmail.com) / [marcocyyu@outlook.com](mailto:marcocyyu@outlook.com)
+
+#### License
+
+R script is made available under the GPL3 licence.
+
 ##
+
 The R scripts were developed under R version 4.1.2 for performing linear quantile regression (LQR) using DataSHIELD.
 
 **[LQR_in_DataSHIELD.R](LQR_in_DataSHIELD.R)** recorded the script for estimating the regression coefficients and the variance of coefficients for linear quantile regression model.
