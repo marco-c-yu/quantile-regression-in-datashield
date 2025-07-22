@@ -95,7 +95,7 @@ $$ \hat J_\tau = \frac{1}{nh} \sum_{i}^{n} K(\frac{y_i - X_i \hat\beta_\tau}{h})
 
 where $K(\cdot)$ is the uniform kernel $K(u) = \frac{1}{2} I(|u| \le 1)$.
 
-The bandwidth h can be selected following the same computation in **summary.rq** function in the **quantreg**[^7] package in **R**:
+The bandwidth h can be selected following the same computation in **summary.rq** and **bandwidth.rq** functions in the **quantreg**[^7] package in **R**:
 
 > $h = n^{-1/3} \times \Phi^{-1}(1 - \alpha/2)^{2/3} \times \\{ \frac{ 1.5 \times [\phi(\Phi^{-1}(\tau))]^2 }{ 2 \times [\Phi^{-1}(\tau)]^2 + 1 } \\} ^{1/3}$ <br>
 > While $(\tau-h <0)$ OR $(\tau+h >1)$, replace $h$ by $h/2$ until both while-conditions are false.
@@ -110,8 +110,6 @@ A **federated learning system** is a learning process trained on data sets distr
 
 There are other categories of federated learning, including **Vertical Federated Learning** and **Federated Transfer Learning**, which will not be discussed here.
 
-##
-
 ### 2.2 Horizontal Federated LQR Algorithm
 
 In [1.3](#13-iteratively-reweighted-least-squares-irls-method-for-lqr), we showed that the regression coefficients of LQR can be solved by IRLS,
@@ -125,8 +123,6 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > 2. in each party node, compute
 > 3. $w_{i;t}=\frac{ \tau I(y_i \ge X_i \hat\beta_{\tau;t} ) + (1- \tau ) I(y_i < X_i \hat\beta_{\tau;t} ) }{\sqrt{(y_i - X_i \hat\beta_{\tau;t})^2 + \Delta^2}}$
 > 4. 
-
-
 
 ##
 
