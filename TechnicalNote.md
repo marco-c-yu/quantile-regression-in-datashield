@@ -9,6 +9,8 @@
 
 [1.3 Iteratively Reweighted Least Squares (IRLS) method for LQR](#13-iteratively-reweighted-least-squares-irls-method-for-lqr) 
 
+[1.4 Asymptotic normality of the regression coefficients estimator of LQR](#14-asymptotic-normality-of-the-regression-coefficients-estimator-of-lqr)
+
 [2.1 Horizontal Federated Learning](#21-horizontal-federated-learning) 
 
 [2.2 Horizontal Federated LQR Algorithm](#22-horizontal-federated-lqr-algorithm) 
@@ -84,10 +86,14 @@ Under suitable regularity conditions[^4], $\hat\beta_\tau$ is a $\sqrt{n}$-consi
 $$\sqrt{n}(\hat\beta_\tau - \beta_\tau) \rightarrow N(0,\Sigma_{\beta,\tau})$$
 
 where $\Sigma_{\beta,\tau} = J_\tau^{-1} \Sigma_\tau J_\tau^{-1}$, 
+$J_\tau = E(f(X\beta_\tau|X) X^TX)$ and 
+$\Sigma_\tau = \tau(1-\tau) E(X^TX)$
 
-$J_\tau = E(f(X\beta_\tau|X) X^TX)$ and $\Sigma_\tau = \tau(1-\tau) E(X^TX)$
+$J_\tau$ can be estimated by the Powell's kernel estimator
 
-<sup>,</sup>[^5]<sup>,</sup>[^6]
+$\hatJ_\tau = frac{1}{nh} \sum_{i}^{n} K(frac{y_i - X_i \hat\beta_\tau}{h}) X^TX$
+
+[^5]<sup>,</sup>[^6]
 
 ##
 
