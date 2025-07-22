@@ -81,7 +81,7 @@ for numerical stability.
 
 ### 1.4 Asymptotic normality of the regression coefficients estimator of LQR
 
-Under suitable regularity conditions[^4], $\hat\beta_\tau$ is a $\sqrt{n}$-consistent estimator of $\beta_\tau$ and 
+Under suitable **regularity conditions**[^4], $\hat\beta_\tau$ is a $\sqrt{n}$-consistent estimator of $\beta_\tau$ and 
 
 $$\sqrt{n}(\hat\beta_\tau - \beta_\tau) \rightarrow N(0,\Sigma_{\beta,\tau})$$
 
@@ -89,7 +89,7 @@ where $\Sigma_{\beta,\tau} = J_\tau^{-1} \Sigma_\tau J_\tau^{-1}$,
 $J_\tau = E(f(X\beta_\tau|X) X^TX)$ and 
 $\Sigma_\tau = \tau(1-\tau) E(X^TX)$
 
-$J_\tau$ can be estimated by the Powell's kernel estimator[^5]<sup>,</sup>[^6]
+$J_\tau$ can be estimated by the **Powell's kernel estimator**[^5]<sup>,</sup>[^6]
 
 $$ \hat J_\tau = \frac{1}{nh} \sum_{i=1}^{n} K(\frac{y_i - X_i \hat\beta_\tau}{h}) X_i^T X_i $$
 
@@ -97,7 +97,7 @@ where $K(\cdot)$ is the uniform kernel $K(u) = \frac{1}{2} I(|u| \le 1)$.
 
 The bandwidth h can be selected following the same computation in **summary.rq** and **bandwidth.rq** functions in the **quantreg**[^7] package in **R**:
 
-> $h = n^{-1/3} \times \Phi^{-1}(1 - \alpha/2)^{2/3} \times \\{ \frac{ 1.5 \times [\phi(\Phi^{-1}(\tau))]^2 }{ 2 \times [\Phi^{-1}(\tau)]^2 + 1 } \\} ^{1/3}$ <br>
+> $h = n^{-1/3} \times \Phi^{-1}(1 - \alpha/2)^{2/3} \times \\{ \frac{ 1.5 \times [\phi(\Phi^{-1}(\tau))]^2 }{ 2 \times [\Phi^{-1}(\tau)]^2 + 1 } \\} ^{1/3}$, where $\alpha=0.05$. <br>
 > While $(\tau-h <0)$ OR $(\tau+h >1)$, replace $h$ by $h/2$ until both while-conditions are false.
 
 ##
@@ -118,7 +118,7 @@ it is similar to the algorithm for solving federated generalized linear model (G
 
 The proposed algorithms for regression coefficients and variance of coefficients estimation of horizontal federated LQR are listed as follow:
 
-> #### Algorithm 1: regression coefficients estimation of horizontal federated LQR <br>
+> #### Algorithm 1: IRLS estimator of the regression coefficients of horizontal federated LQR <br>
 > In server, <br>
 > 1: initialize an inital estimatior, $\beta_{\tau;0}$ <br>
 > <br>
@@ -134,11 +134,22 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > 8: replace $t$ by $t+1$ <br>
 > <br>
 > 9: Repeat steps 2-8 until $|\beta_{\tau;t}-\beta_{\tau;t-1}|<\delta$, for some pre-specified small tolerence value $\delta$. <br>
-> 10: After the end loop of step 9, $\beta_{\tau;t}$ is the IRLS estimator of the regression coefficients of LQR. <br>
+> 10: After the end loop of step 9, $\hat\beta_\tau=\beta_{\tau;t}$ is the IRLS estimator of the regression coefficients of LQR. <br>
 > <br>
 > ###### Remarks:
 > $y_m$ and $X_m$ represents the observed response and predictors in the m-th party. <br>
 > $(X_m^TW_{m,t}X_m)$ and $(X_m^TW_{m,t}y_m)$ can be derived from the mean and covariance matrix of $(W_{m,t}^{1/2}X_m)$ and $(W_{m,t}^{1/2}y_m)$ using the property $Cov(X,Y)=E(XY)-E(X)E(Y)$ <br>
+
+> #### Algorithm 2: Powell's kernel estimator of the variance of coefficients of horizontal federated LQR <br>
+> 1: After obtaining the IRLS estimator of regression coefficients, $\hat\beta_\tau$, in Algorithm 1, <br>
+> <br>
+> In server, <br>
+> $h = n^{-1/3} \times \Phi^{-1}(1 - \alpha/2)^{2/3} \times \\{ \frac{ 1.5 \times [\phi(\Phi^{-1}(\tau))]^2 }{ 2 \times [\Phi^{-1}(\tau)]^2 + 1 } \\} ^{1/3}$, where $\alpha=0.05$. <br>
+> 3: While $(\tau-h <0)$ OR $(\tau+h >1)$, replace $h$ by $h/2$ until both while-conditions are false.
+> <br>
+> In each party node, m, <br>
+> compute $u=(y - X \hat\beta_\tau)$
+
 
 ##
 
