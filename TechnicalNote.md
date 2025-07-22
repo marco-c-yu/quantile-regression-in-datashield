@@ -13,7 +13,7 @@
 
 [2.1 Horizontal Federated Learning](#21-horizontal-federated-learning) 
 
-[2.2 Horizontal Federated LQR Algorithm](#22-horizontal-federated-lqr-algorithm) 
+[2.2 Horizontal Federated LQR Algorithm](#22-horizontal-federated-lqr-algorithms) 
 
 [References](#references) 
 
@@ -107,13 +107,15 @@ A **federated learning system** is a learning process trained on data sets distr
 
 There are other categories of federated learning, including **Vertical Federated Learning** and **Federated Transfer Learning**, which will not be discussed here.
 
-### 2.2 Horizontal Federated LQR Algorithm
+### 2.2 Horizontal Federated LQR Algorithms
 
 In [1.3](#13-iteratively-reweighted-least-squares-irls-method-for-lqr), we showed that the regression coefficients of LQR can be solved by IRLS,
 
 it is similar to the algorithm for solving federated generalized linear model (GLM).[^9]
 
-The proposed algorithms for regression coefficients and variance of coefficients estimation of horizontal federated LQR are listed as follow:
+Estimation for variance of coefficient follows the implementation of Powell's kernel estimator in the **quantreg**[^7] package in **R**.
+
+The proposed algorithms for regression coefficients and variance of coefficients estimation of horizontal federated LQR are summarized as follow:
 
 > #### Algorithm 1: IRLS estimator of the regression coefficients of horizontal federated LQR[^3]<sup>,</sup>[^9] <br>
 > In server, <br>
