@@ -17,7 +17,7 @@
 
 ##
 
-### Conditional Quantile Function
+### 1.1 Conditional Quantile Function
 
 The $\tau$-th conditional quantile function of the response variable Y given the predictors X is defined as
 
@@ -27,7 +27,7 @@ where $F_{Y|X}$ is the cumulative distribution function (CDF) of Y given X.
 
 ##
 
-### Linear Quantile Regression (LQR)
+### 1.2 Linear Quantile Regression (LQR)
 
 In **Linear Quantile Regression (LQR)**[^1]<sup>,</sup>[^2] model, the conditional quantile function is assumed to be a linear combination of the predictors X:
 
@@ -45,7 +45,7 @@ $$ \beta_\tau = {arg\max} \\{ \sum_{y_i \ge X_i\beta_\tau} [\tau|y_i-X_i\beta_\t
 
 where $X_i=[x_{i1},...,x_{ip}]$ is a $(1 \times p)$-dimensional row vector of the predictor values for the i-th subject.
 
-### Iteratively Reweighted Least Squares (IRLS) method for LQR
+### 1.3 Iteratively Reweighted Least Squares (IRLS) method for LQR
 
 By considering 
 
@@ -77,7 +77,7 @@ Under suitable regularity conditions[^4], $\hat\beta_\tau$ satisfies consistency
 
 ##
 
-### Horizontal Federated Learning
+### 2.1 Horizontal Federated Learning
 
 A **federated learning system** is a learning process trained on data sets distributed across multiple parties while preventing data leakage.
 
@@ -87,7 +87,7 @@ There are other categories of federated learning, including **Vertical Federated
 
 ##
 
-### Horizontal Federated LQR Algorithm
+### 2.2 Horizontal Federated LQR Algorithm
 
 > ###### Algorithm for estimating $\beta_\tau$ <br>
 > asdfe <br>
@@ -97,7 +97,7 @@ There are other categories of federated learning, including **Vertical Federated
 
 ##
 
-### References
+### 3 References
 
 [^1]: Furno, M., & Vistocco, D. (2018). Quantile regression: Estimation and simulation. Wiley. https://doi.org/10.1002/9781118863718
 
