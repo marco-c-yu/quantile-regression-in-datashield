@@ -89,11 +89,11 @@ where $\Sigma_{\beta,\tau} = J_\tau^{-1} \Sigma_\tau J_\tau^{-1}$,
 $J_\tau = E(f(X\beta_\tau|X) X^TX)$ and 
 $\Sigma_\tau = \tau(1-\tau) E(X^TX)$
 
-$J_\tau$ can be estimated by the Powell's kernel estimator
+$J_\tau$ can be estimated by the Powell's kernel estimator[^5]<sup>,</sup>[^6]
 
-$\hat J_\tau = \frac{1}{nh} \sum_{i}^{n} K(\frac{y_i - X_i \hat\beta_\tau}{h}) X_i^T X_i$
+$$ \hat J_\tau = \frac{1}{nh} \sum_{i}^{n} K(\frac{y_i - X_i \hat\beta_\tau}{h}) X_i^T X_i $$
 
-[^5]<sup>,</sup>[^6]
+where $K(\dot)$ is the uniform kernel $K(u) = \frac{1}{2} I(|u| \le 1)$
 
 ##
 
