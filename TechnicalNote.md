@@ -98,7 +98,7 @@ where $K(\cdot)$ is the uniform kernel $K(u) = \frac{1}{2} I(|u| \le 1)$.
 The bandwidth h can be selected following the same computation in **summary.rq** function in the **quantreg**[^7] package in **R**:
 
 > $h = n^{-1/3} \times \Phi^{-1}(1 - \alpha/2)^{2/3} \times \\{ \frac{ 1.5 \times [\phi(\Phi^{-1}(\tau))]^2 }{ 2 \times [\Phi^{-1}(\tau)]^2 + 1 } \\} ^{1/3}$ <br>
-> While ($\tau$-h < 0) OR ($\tau$+h > 1), replace h by h/2 until both while-conditions are false
+> While $(\tau-h <0)$ OR $(\tau+h >1)$, replace $h$ by $h/2$ until both while-conditions are false.
 
 ##
 
