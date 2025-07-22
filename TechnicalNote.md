@@ -17,7 +17,7 @@
 
 ##
 
-### 1.1   Conditional Quantile Function
+### 1.1 &emsp Conditional Quantile Function
 
 The $\tau$-th conditional quantile function of the response variable Y given the predictors X is defined as
 
@@ -87,7 +87,7 @@ There are other categories of federated learning, including **Vertical Federated
 
 ##
 
-### 2.2 Horizontal Federated LQR Algorithm
+### 2.2 &emsp Horizontal Federated LQR Algorithm
 
 > ###### Algorithm for estimating $\beta_\tau$ <br>
 > asdfe <br>
@@ -97,7 +97,7 @@ There are other categories of federated learning, including **Vertical Federated
 
 ##
 
-### 3 References
+### 3 &emsp References
 
 [^1]: Furno, M., & Vistocco, D. (2018). Quantile regression: Estimation and simulation. Wiley. https://doi.org/10.1002/9781118863718
 
