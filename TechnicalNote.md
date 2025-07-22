@@ -95,10 +95,7 @@ $$ \hat J_\tau = \frac{1}{nh} \sum_{i=1}^{n} K(\frac{y_i - X_i \hat\beta_\tau}{h
 
 where $K(\cdot)$ is the uniform kernel $K(u) = \frac{1}{2} I(|u| \le 1)$.
 
-The bandwidth h can be selected following the same computation in **summary.rq** and **bandwidth.rq** functions in the **quantreg**[^7] package in **R**:
-
-> $h = n^{-1/3} \times \Phi^{-1}(1 - \alpha/2)^{2/3} \times \\{ \frac{ 1.5 \times [\phi(\Phi^{-1}(\tau))]^2 }{ 2 \times [\Phi^{-1}(\tau)]^2 + 1 } \\} ^{1/3}$, where $\alpha=0.05$. <br>
-> While $(\tau-h <0)$ OR $(\tau+h >1)$, replace $h$ by $h/2$ until both while-conditions are false.
+The bandwidth h can be selected following the same computation in **summary.rq** and **bandwidth.rq** functions in the **quantreg**[^7] package in **R**.
 
 ##
 
@@ -144,11 +141,17 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > 1: After obtaining the IRLS estimator of regression coefficients, $\hat\beta_\tau$, in Algorithm 1, <br>
 > <br>
 > In server, <br>
-> $h = n^{-1/3} \times \Phi^{-1}(1 - \alpha/2)^{2/3} \times \\{ \frac{ 1.5 \times [\phi(\Phi^{-1}(\tau))]^2 }{ 2 \times [\Phi^{-1}(\tau)]^2 + 1 } \\} ^{1/3}$, where $\alpha=0.05$. <br>
+> 2: $h = n^{-1/3} \times \Phi^{-1}(1 - \alpha/2)^{2/3} \times \\{ \frac{ 1.5 \times [\phi(\Phi^{-1}(\tau))]^2 }{ 2 \times [\Phi^{-1}(\tau)]^2 + 1 } \\} ^{1/3}$, where $\alpha=0.05$. <br>
 > 3: While $(\tau-h <0)$ OR $(\tau+h >1)$, replace $h$ by $h/2$ until both while-conditions are false.
 > <br>
 > In each party node, m, <br>
-> compute $u=(y - X \hat\beta_\tau)$
+> 4: compute $u_m=(y_m - X_m \hat\beta_\tau)$ <br>
+> 5: compute the sample mean and variance of $u_m$ <br>
+> <br>
+> In server, <br>
+> 6: compute $var(u)=\frac{1}{n-1} [\sum u^2 - (\sum u)^2/n] $ <br>
+> 7: replace $h$ by $h=[\Phi^{-1}(\tau+h)-\Phi^{-1}(\tau-h)] \times min(\sqrt{var(u)},(Q_u(0.75)-Q_u(0.25))/1.34)$ <br>
+
 
 
 ##
