@@ -3,17 +3,17 @@
 
 ### Contents
 
-[Conditional Quantile Function](#conditional-quantile-function) 
+[1.1 Conditional Quantile Function](#11-conditional-quantile-function) 
 
-[Linear Quantile Regression (LQR)](#linear-quantile-regression-lqr) 
+[1.2 Linear Quantile Regression (LQR)](#12-linear-quantile-regression-lqr) 
 
-[Iteratively Reweighted Least Squares (IRLS) method for LQR](#iteratively-reweighted-least-squares-irls-method-for-lqr) 
+[1.3 Iteratively Reweighted Least Squares (IRLS) method for LQR](#13-iteratively-reweighted-least-squares-irls-method-for-lqr) 
 
-[Horizontal Federated Learning](#horizontal-federated-learning) 
+[2.1 Horizontal Federated Learning](#21-horizontal-federated-learning) 
 
-[Horizontal Federated LQR Algorithm](#horizontal-federated-lqr-algorithm) 
+[2.2 Horizontal Federated LQR Algorithm](#22-horizontal-federated-lqr-algorithm) 
 
-[References](#references) 
+[3 References](#3-references) 
 
 ##
 
