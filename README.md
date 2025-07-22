@@ -12,7 +12,7 @@ Regression coefficients were estimated by Iterative Weighted Least Squares (IWLS
 Variance of regression coefficients were estimated by Powell’s kernel estimator. [^3]<sup>,</sup>[^4]
 
 ##
-The mathematical detail of this horizontal federated quantile regression is described in **[TechnicalNote.md](TechnicalNote.md)**
+The mathematical details of this horizontal federated quantile regression can refer to **[TechnicalNote.md](TechnicalNote.md)**
 
 ##
 **Reference:**
