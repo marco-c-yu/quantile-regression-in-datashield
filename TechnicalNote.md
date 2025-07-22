@@ -142,14 +142,14 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > <br>
 > In server, <br>
 > 2: $h = n^{-1/3} \times \Phi^{-1}(1 - \alpha/2)^{2/3} \times \\{ \frac{ 1.5 \times [\phi(\Phi^{-1}(\tau))]^2 }{ 2 \times [\Phi^{-1}(\tau)]^2 + 1 } \\} ^{1/3}$, where $\alpha=0.05$. <br>
-> 3: While $(\tau-h <0)$ OR $(\tau+h >1)$, replace $h$ by $h/2$ until both while-conditions are false.
+> 3: While $(\tau-h <0)$ OR $(\tau+h >1)$, replace $h$ by $h/2$ until both while-conditions are false. <br>
 > <br>
 > In each party node, m, <br>
 > 4: compute $u_m=(y_m - X_m \hat\beta_\tau)$ <br>
 > 5: compute the sample mean and variance of $u_m$ <br>
 > <br>
 > In server, <br>
-> 6: compute $var(u)=\frac{1}{n-1} [\sum u^2 - (\sum u)^2/n] $ <br>
+> 6: compute $var(u)=\frac{1}{n-1} [\sum_{} u^2 - (\sum_{} u)^2/n]$ <br>
 > 7: replace $h$ by $h=[\Phi^{-1}(\tau+h)-\Phi^{-1}(\tau-h)] \times min(\sqrt{var(u)},(Q_u(0.75)-Q_u(0.25))/1.34)$ <br>
 
 
