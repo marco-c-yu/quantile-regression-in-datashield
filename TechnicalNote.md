@@ -17,7 +17,7 @@
 
 ##
 
-### 1.1 Conditional Quantile Function
+### 1.1   Conditional Quantile Function
 
 The $\tau$-th conditional quantile function of the response variable Y given the predictors X is defined as
 
