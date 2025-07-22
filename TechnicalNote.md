@@ -150,10 +150,19 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > 6: compute the sum of squares of $u_m$: $\sum_{i} u_{m,i}^2 = (n_m-1) \times v(u_m) + n_m \times \bar u_m^2$ <br>
 > <br>
 > In server, <br>
-> 6: compute $var(u)=\frac{1}{n-1} [\sum_{} u^2 - (\sum_{} u)^2/n]=\frac{1}{n-1} [\sum_{m} \sum_{i} u_{m,i}^2 - (\sum_{m} n_m \times \bar u_m)^2/n]$ <br>
-> 7: replace $h$ by $h=[\Phi^{-1}(\tau+h)-\Phi^{-1}(\tau-h)] \times min(\sqrt{var(u)},(Q_u(0.75)-Q_u(0.25))/1.34)$ <br>
-
-
+> 7: compute $var(u)=\frac{1}{n-1} [\sum_{} u^2 - (\sum_{} u)^2/n]=\frac{1}{n-1} [\sum_{m} \sum_{i} u_{m,i}^2 - (\sum_{m} n_m \times \bar u_m)^2/n]$ <br>
+> 8: replace $h$ by $h=[\Phi^{-1}(\tau+h)-\Phi^{-1}(\tau-h)] \times min(\sqrt{var(u)},(Q_u(0.75)-Q_u(0.25))/1.34)$ <br>
+> <br>
+> In each party node, m, <br>
+> 9: compute $X_m^T X_m$ <br>
+> 10: compute the diagonal matrix $k_m=diag(\sqrt(\phi(u_m/h)/h))$ <br>
+> 11: compute the weighted predictor matrix $k_m X_m$ <br>
+> 12: calculate $H_m=(k_m X_m)^T (k_m X_m)$ <br>
+> <br>
+> In server, <br>
+> 13: compute $H=\sum_m H_m$ and solve the matrix inverse $H^{-1}$ <br>
+> 14: compute $X^T X = \sum_m X_m^T X_m$ <br>
+> 15: estimate the variance of coefficients by $\hat\Sigma_{\beta,\tau} = \tau(1-\tau) H^{-1} (X^T X) H^{-1}/n$ <br>
 
 ##
 
