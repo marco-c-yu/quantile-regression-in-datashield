@@ -91,7 +91,7 @@ $\Sigma_\tau = \tau(1-\tau) E(X^TX)$
 
 $J_\tau$ can be estimated by the Powell's kernel estimator
 
-$\hat J_\tau = \frac{1}{nh} \sum_{i}^{n} K(\frac{y_i - X_i \hat\beta_\tau}{h}) X^TX$
+$\hat J_\tau = \frac{1}{nh} \sum_{i}^{n} K(\frac{y_i - X_i \hat\beta_\tau}{h}) X_i^T X_i$
 
 [^5]<sup>,</sup>[^6]
 
