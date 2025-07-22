@@ -115,7 +115,7 @@ it is similar to the algorithm for solving federated generalized linear model (G
 
 The proposed algorithms for regression coefficients and variance of coefficients estimation of horizontal federated LQR are listed as follow:
 
-> #### Algorithm 1: IRLS estimator of the regression coefficients of horizontal federated LQR <br>
+> #### Algorithm 1: IRLS estimator of the regression coefficients of horizontal federated LQR[^3]<sup>,</sup>[^9] <br>
 > In server, <br>
 > 1: initialize an inital estimatior, $\beta_{\tau;0}$ <br>
 > <br>
@@ -137,7 +137,7 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > $y_m$ and $X_m$ represents the observed response and predictors in the m-th party. <br>
 > $(X_m^TW_{m,t}X_m)$ and $(X_m^TW_{m,t}y_m)$ can be derived from the mean and covariance matrix of $(W_{m,t}^{1/2}X_m)$ and $(W_{m,t}^{1/2}y_m)$ using the property $Cov(X,Y)=E(XY)-E(X)E(Y)$ <br>
 
-> #### Algorithm 2: Powell's kernel estimator of the variance of coefficients of horizontal federated LQR <br>
+> #### Algorithm 2: Powell's kernel estimator of the variance of coefficients of horizontal federated LQR[^5]<sup>,</sup>[^6] <br>
 > 1: After obtaining the IRLS estimator of regression coefficients, $\hat\beta_\tau$, in Algorithm 1, <br>
 > <br>
 > In server, <br>
