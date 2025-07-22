@@ -162,7 +162,12 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > In server, <br>
 > 13: compute $H=\sum_m H_m$ and solve the matrix inverse $H^{-1}$ <br>
 > 14: compute $X^T X = \sum_m X_m^T X_m$ <br>
-> 15: estimate the variance of coefficients by $\hat\Sigma_{\beta,\tau} = \tau(1-\tau) H^{-1} (X^T X) H^{-1}/n$ <br>
+> 15: estimate the variance of coefficients by $\hat\Sigma_{\beta,\tau}/n = \tau(1-\tau) H^{-1} (X^T X) H^{-1}/n$ <br>
+> <br>
+> ###### Remarks:
+> $\Phi(\cdot)$ is the cumulative distribution function (CDF) of a standard normal distribution and <br>
+> $\phi(\cdot)$ is the probability density function (PDF) of a standard normal distribution.<br>
+> $Q_u(\cdot)$ is the quantile function of u. <br>
 
 ##
 
