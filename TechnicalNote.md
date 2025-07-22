@@ -96,11 +96,19 @@ There are other categories of federated learning, including **Vertical Federated
 
 ### 2.2 Horizontal Federated LQR Algorithm
 
-> ###### Algorithm for estimating $\beta_\tau$ <br>
-> asdfe <br>
-> asdfe <br>
+In [1.3](#13-iteratively-reweighted-least-squares-irls-method-for-lqr), we showed that the regression coefficients of LQR can be solved by IRLS,
 
-[^8]
+it is similar to the algorithm for solving federated generalized linear model (GLM).[^8]
+
+The proposed algorithms for regression coefficients and variance of coefficients estimation of horizontal federated LQR are listed as follow:
+
+> ###### Algorithm 1: regression coefficients estimation of horizontal federated LQR <br>
+> 1. initialize a global inital estimation, $\beta_{\tau;0}$, in server
+> 2. in each party node, compute
+> 3. $w_{i;t}=\frac{ \tau I(y_i \ge X_i \hat\beta_{\tau;t} ) + (1- \tau ) I(y_i < X_i \hat\beta_{\tau;t} ) }{\sqrt{(y_i - X_i \hat\beta_{\tau;t})^2 + \Delta^2}}$
+> 4. 
+
+
 
 ##
 
