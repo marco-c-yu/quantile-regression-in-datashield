@@ -95,10 +95,10 @@ $$ \hat J_\tau = \frac{1}{nh} \sum_{i}^{n} K(\frac{y_i - X_i \hat\beta_\tau}{h})
 
 where $K(\cdot)$ is the uniform kernel $K(u) = \frac{1}{2} I(|u| \le 1)$.
 
-The bandwidth h can be selected following the same computation in **summary.rq** function in the **quantreg** package in **R**.[^7]
+The bandwidth h can be selected following the same computation in **summary.rq** function in the **quantreg**[^7] package in **R**:
 
 > $h = n^{-1/3} \times \Phi^{-1}(1 - \alpha/2)^{2/3} \times \\{ \frac{ 1.5 \times [\phi(\Phi^{-1}(\tau))]^2 }{ 2 \times [\Phi^{-1}(\tau)]^2 + 1 } \\} ^{1/3}$ <br>
-> While (\tau - h < 0) OR (\tau + h > 1), replace h by h/2
+> While ($\tau$-h < 0) OR ($\tau$+h > 1), replace h by h/2 until both while-conditions are false
 
 ##
 
