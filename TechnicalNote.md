@@ -89,11 +89,11 @@ where $\Sigma_{\beta,\tau} = J_\tau^{-1} \Sigma_\tau J_\tau^{-1}$,
 $J_\tau = E(f(X\beta_\tau|X) X^TX)$ and 
 $\Sigma_\tau = \tau(1-\tau) E(X^TX)$
 
-$J_\tau$ can be estimated by the **Powell's kernel estimator**[^5]<sup>,</sup>[^6]
+$J_\tau$ can be estimated by the **Powell's kernel estimator**
 
 $$ \hat J_\tau = \frac{1}{nh} \sum_{i=1}^{n} K(\frac{y_i - X_i \hat\beta_\tau}{h}) X_i^T X_i $$
 
-where $K(\cdot)$ is the uniform kernel $K(u) = \frac{1}{2} I(|u| \le 1)$.
+where $K(\cdot)$ is a kernel density function.[^5]<sup>,</sup>[^6]
 
 The bandwidth h can be selected following the same computation in **summary.rq** and **bandwidth.rq** functions in the **quantreg**[^7] package in **R**.
 
@@ -176,7 +176,7 @@ The proposed algorithms for regression coefficients and variance of coefficients
 
 [^4]: Koenker, R. (2005). Quantile Regression (pp. 116-150). Cambridge University Press. https://doi.org/10.1017/CBO9780511754098
 
-[^5]: Powell, J. (1991) Estimation of Monotonic Regression Models under Quantile Restrictions, in Nonparametric and Semiparametric Methods in Econometrics, W. Barnett, J. Powell, and G Tauchen (eds.), Cambridge U. Press 
+[^5]: Koenker, R. (2005). Quantile Regression (pp. 80-81). Cambridge University Press. https://doi.org/10.1017/CBO9780511754098
 
 [^6]: Kato, K. (2012). Asymptotic normality of Powell’s kernel estimator. Annals of the Institute of Statistical Mathematics, 64(2), 255–273. https://doi.org/10.1007/s10463-010-0310-9 
 
