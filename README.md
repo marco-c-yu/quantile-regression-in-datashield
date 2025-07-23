@@ -7,16 +7,34 @@
 #### Developer (for mathematical theory and R program DataSHIELD implementation)
 
 > [Marco, Chak Yan, YU](https://www.linkedin.com/in/marcocyyu/) <br>
-> contact by: [marcocyyu@gmail.com](mailto:marcocyyu@gmail.com) / [marcocyyu@outlook.com](mailto:marcocyyu@outlook.com) <br>
+> contact: [marcocyyu@gmail.com](mailto:marcocyyu@gmail.com) / [marcocyyu@outlook.com](mailto:marcocyyu@outlook.com) <br>
 
 #### License
 
-> R script is made available under the GPL3 licence.
-> Please cite the paper and this github page.
+> All resources are made available under the GPL3 licence.
+> Please cite our paper and this github page when using any resource here.
 
 ##
 
-The R scripts were developed under R version 4.1.2 for performing linear quantile regression (LQR) using DataSHIELD.
+Mathematical details of this horizontal federated quantile regression can refer to **[TechnicalNote.md](TechnicalNote.md)**
+
+##
+
+# R program
+
+The R program was developed for performing linear quantile regression (LQR) using **[DataSHIELD](https://datashield.org/)**.
+
+##
+
+### Analyst side
+
+Tested in R version 4.1.2
+
+**Packages required:**
+
+> **DSI** (tested in version 1.5.0) <br>
+> **dsBaseClient** (tested in version 6.2.0) <br>
+> **quantreg** (tested in version 5.94) <br>
 
 **[DataSHIELD_LQR.R](DataSHIELD_LQR.R)** recorded the script for estimating the regression coefficients and the variance of coefficients for linear quantile regression model.
 
@@ -24,10 +42,16 @@ Regression coefficients were estimated by Iterative Weighted Least Squares (IWLS
 
 Variance of regression coefficients were estimated by Powell’s kernel estimator. [^3]<sup>,</sup>[^4]
 
-##
-The mathematical details of this horizontal federated quantile regression can refer to **[TechnicalNote.md](TechnicalNote.md)**
+### Server side
+
+DataSHIELD servers were setup using **[OBiBa/Opal docker](https://github.com/obiba/docker-opal)**.
+
+Tested server setting was recorded in the docker-compose file: **[docker-compose-opal-4.5.yml](docker-compose-opal-4.5.yml)**,
+
+which is based on **obiba/opal:4.5** with **datashield/rock-base:6.2-R4.1**.
 
 ##
+
 **Reference:**
 
 [^1]: Schnabel, S. K., & Eilers, P. H. C. (2013). Simultaneous estimation of quantile curves using quantile sheets. AStA Advances in Statistical Analysis, 97(1), 77–87. https://doi.org/10.1007/s10182-012-0198-1
