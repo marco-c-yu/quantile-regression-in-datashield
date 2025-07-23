@@ -2,8 +2,6 @@
 
 **Content of this repository is part of a working paper affiliate with Singapore Eye Research Institute.**
 
-##
-
 #### Developer (for mathematical theory and R program DataSHIELD implementation)
 
 > [Marco, Chak Yan, YU](https://www.linkedin.com/in/marcocyyu/) <br>
