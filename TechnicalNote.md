@@ -1,4 +1,4 @@
-# Technical Note: Horizontal Federated Linear Quantile Regression (LQR)
+# Technical Note: <br> Horizontal Federated Linear Quantile Regression (LQR)
 
 **Content of this repository is part of a working paper affiliate with Singapore Eye Research Institute.**
 
