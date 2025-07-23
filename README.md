@@ -22,7 +22,7 @@ Mathematical details of this horizontal federated quantile regression can refer 
 
 ## R program
 
-The R program was developed for performing linear quantile regression (LQR) using **[DataSHIELD](https://datashield.org/)**.
+The R program was developed for performing **linear quantile regression (LQR)** using **[DataSHIELD](https://datashield.org/)**.
 
 ##
 
@@ -32,15 +32,13 @@ Tested in R version 4.1.2
 
 **Packages required:**
 
-> **DSI** (tested in version 1.5.0) <br>
-> **dsBaseClient** (tested in version 6.2.0) <br>
-> **quantreg** (tested in version 5.94) <br>
+> **DSI** (tested version: 1.5.0) <br>
+> **dsBaseClient** (tested version: 6.2.0) <br>
+> **quantreg** (tested version: 5.94) <br>
 
-**[DataSHIELD_LQR.R](DataSHIELD_LQR.R)** recorded the script for estimating the regression coefficients and the variance of coefficients for linear quantile regression model.
-
+**[DataSHIELD_LQR.R](DataSHIELD_LQR.R)** recorded the script for estimating the regression coefficients and the variance of coefficients for linear quantile regression model. 
 Regression coefficients were estimated by Iterative Weighted Least Squares (IWLS). [^1]<sup>,</sup>[^2] 
-
-Variance of regression coefficients were estimated by Powell’s kernel estimator. [^3]<sup>,</sup>[^4]
+Variance of regression coefficients were estimated by Powell’s kernel estimator. [^3]<sup>,</sup>[^4] 
 
 ##
 
