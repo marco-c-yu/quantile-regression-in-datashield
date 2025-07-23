@@ -1,5 +1,20 @@
 # Technical Note: Horizontal Federated Linear Quantile Regression (LQR)
 
+**Content of this repository is part of a working paper affiliate with Singapore Eye Research Institute.**
+
+##
+
+#### Developer (for mathematical theory and R program DataSHIELD implementation)
+
+> [Marco, Chak Yan, YU](https://www.linkedin.com/in/marcocyyu/) <br>
+> contact: [marcocyyu@gmail.com](mailto:marcocyyu@gmail.com) / [marcocyyu@outlook.com](mailto:marcocyyu@outlook.com) <br>
+
+#### License
+
+> All resources are made available under the GPL3 licence. <br>
+> Please cite our paper and this github page when using any resource here. <br>
+
+##
 
 ### Contents
 
