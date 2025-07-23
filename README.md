@@ -16,6 +16,8 @@
 
 ##
 
+# Mathematical details
+
 Mathematical details of this horizontal federated quantile regression can refer to **[TechnicalNote.md](TechnicalNote.md)**
 
 ##
@@ -41,6 +43,8 @@ Tested in R version 4.1.2
 Regression coefficients were estimated by Iterative Weighted Least Squares (IWLS). [^1]<sup>,</sup>[^2] 
 
 Variance of regression coefficients were estimated by Powell’s kernel estimator. [^3]<sup>,</sup>[^4]
+
+##
 
 ### Server side
 
