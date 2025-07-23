@@ -4,20 +4,21 @@
 
 ##
 
-#### Developer
+#### Developer (for mathematical theory and R program DataSHIELD implementation)
 
 > [Marco, Chak Yan, YU](https://www.linkedin.com/in/marcocyyu/) <br>
-> [marcocyyu@gmail.com](mailto:marcocyyu@gmail.com) / [marcocyyu@outlook.com](mailto:marcocyyu@outlook.com) <br>
+> contact by: [marcocyyu@gmail.com](mailto:marcocyyu@gmail.com) / [marcocyyu@outlook.com](mailto:marcocyyu@outlook.com) <br>
 
 #### License
 
 > R script is made available under the GPL3 licence.
+> Please cite the paper and this github page.
 
 ##
 
 The R scripts were developed under R version 4.1.2 for performing linear quantile regression (LQR) using DataSHIELD.
 
-**[LQR_in_DataSHIELD.R](LQR_in_DataSHIELD.R)** recorded the script for estimating the regression coefficients and the variance of coefficients for linear quantile regression model.
+**[DataSHIELD_LQR.R](DataSHIELD_LQR.R)** recorded the script for estimating the regression coefficients and the variance of coefficients for linear quantile regression model.
 
 Regression coefficients were estimated by Iterative Weighted Least Squares (IWLS). [^1]<sup>,</sup>[^2] 
 
