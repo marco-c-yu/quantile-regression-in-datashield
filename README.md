@@ -11,8 +11,8 @@
 
 #### License
 
-> All resources are made available under the GPL3 licence.
-> Please cite our paper and this github page when using any resource here.
+> All resources are made available under the GPL3 licence. <br>
+> Please cite our paper and this github page when using any resource here. <br>
 
 ##
 
