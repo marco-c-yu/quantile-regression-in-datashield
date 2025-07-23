@@ -16,13 +16,13 @@
 
 ##
 
-# Mathematical details
+## Mathematical details
 
 Mathematical details of this horizontal federated quantile regression can refer to **[TechnicalNote.md](TechnicalNote.md)**
 
 ##
 
-# R program
+## R program
 
 The R program was developed for performing linear quantile regression (LQR) using **[DataSHIELD](https://datashield.org/)**.
 
@@ -56,7 +56,7 @@ which is based on **obiba/opal:4.5** with **datashield/rock-base:6.2-R4.1**.
 
 ##
 
-**Reference:**
+## Reference:
 
 [^1]: Schnabel, S. K., & Eilers, P. H. C. (2013). Simultaneous estimation of quantile curves using quantile sheets. AStA Advances in Statistical Analysis, 97(1), 77–87. https://doi.org/10.1007/s10182-012-0198-1
 
