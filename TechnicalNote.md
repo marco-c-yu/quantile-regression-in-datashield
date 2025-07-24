@@ -30,7 +30,7 @@
 
 [3.1 Extension of LQR: Allowing for nonlinearity](#31-extension-of-lqr-allowing-for-nonlinearity)
 
-[3.2 Extension of LQR: Estimation for multiple non-crossing quantile estimation](32-extension-of-lqr-estimation-for-multiple-non-crossing-quantile-estimation)
+[3.2 Extension of LQR: Estimation for multiple non-crossing quantile estimation](#32-extension-of-lqr-estimation-for-multiple-non-crossing-quantile-estimation)
 
 [References](#references) 
 
