@@ -190,21 +190,34 @@ The proposed algorithms for regression coefficients and variance of coefficients
 
 ### 3.1 Extension of LQR: Allowing for nonlinearity
 
-Nonlinearity can be modelled by extending the LQR using **Restricted Cubic Splines (RCS)** functions. 
+Nonlinearity can be modelled by extending the LQR using **Restricted Cubic Splines (RCS)** functions.[^10]
 
 For example a $K$ knots $(t_1<t_2<...<t_K)$ RCS quantile regression can be formulated as
 
-$$ Q_{Y|x}(\tau)=\beta_{\tau,0}+\sum_{j=1}^K \beta_{\tau,j} \times S_j $$
+$$ Q_{Y|x}(\tau)=\beta_{\tau,0}+\sum_{j=1}^{K-1} \beta_{\tau,j} \times s_j $$
 
-where
-
-$$ s_1 = x $$
-
-and
+where $s_1 = x$ and
 
 $$ s_j = (x-t_{j-1})^3I(x-t_{j-1}>0) - (x-t_{K-1})^3I(x-t_{K-1}>0)\frac{(t_{K}-t_{j-1}>0)}{(t_{K}-t_{K-1}>0)} + (x-t_{K})^3I(x-t_{K}>0)\frac{(t_{K-1}-t_{j-1}>0)}{(t_{K}-t_{K-1}>0)}$$
 
-B-splines are piecewise polynomial functions that allow for the modeling of complex relationships in data without the constraints imposed by traditional linear formulations.
+By storing $s_1$ to $s_{K-1}$ as $(K-2)$ variables in the datasets, it reduced to a LQR problem of fitting the quantile of Y on $s_1$, $s_2$,..., $s_{K-1}$.
+
+### 3.2 Extension of LQR: Estimation for multiple non-crossing quantile estimation
+
+In some situations, we might want to estimate multiple quantiles simultaneously and impose the **non-crossing constraints**: 
+$Q_{Y|x}(\tau_i) < Q_{Y|x}(\tau_j) \iff \tau_i < \tau_j$
+
+In LQR, the non-crossing constraints are equivalent to $X\beta_{\tau_i} < X\beta_{\tau_j} \iff \tau_i < \tau_j$,
+
+which can be solved by **Inequality Constrained Least-Squares (ICLS) estimation**[^11]:
+
+estimation for $y=X\beta+e$ with $A\beta \ge c$ is given by
+
+$\hat\beta^* = \hat\beta (c-A\hat\beta)$ if $A \hat\beta^* >> c$
+
+$\hat\beta^* = \hat\beta + (X^T X)^{-1} A^T(A(X^T X)^{-1}A^T)^{-1} (c-A\hat\beta)$ if $A \hat\beta^* = c$ AND
+
+where $\hat\beta = (X^T X)^{-1} (X^T y)$
 
 
 ##
@@ -228,3 +241,7 @@ B-splines are piecewise polynomial functions that allow for the modeling of comp
 [^8]: Yang, Q., Liu, Y., Chen, T., & Tong, Y. (2019). Federated Machine Learning: Concept and Applications. ACM Transactions on Intelligent Systems and Technology, 10(2), 19. https://doi.org/10.1145/3298981
 
 [^9]: Cellamare, M., van Gestel, A. J., Alradhi, H., Martin, F., & Moncada-Torres, A. (2022). A Federated Generalized Linear Model for Privacy-Preserving Analysis. Algorithms 2022, Vol. 15, Page 243, 15(7), 243. https://doi.org/10.3390/A15070243
+
+[^10]: Marrie, R. A., Dawson, N. V., & Garland, A. (2009). Quantile regression and restricted cubic splines are useful for exploring relationships between continuous variables. Journal of Clinical Epidemiology, 62(5), 511-517.e1. https://doi.org/10.1016/J.JCLINEPI.2008.05.015
+
+[^11]: Liew, C. K. (1976). Inequality Constrained Least-Squares Estimation. Journal of the American Statistical Association, 71(355), 746. https://doi.org/10.2307/2285614
