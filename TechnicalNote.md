@@ -192,15 +192,17 @@ The proposed algorithms for regression coefficients and variance of coefficients
 
 Nonlinearity can be modelled by extending the LQR using **Restricted Cubic Splines (RCS)** functions. 
 
-For example a K knots RCS quantile regression can be formulated as
+For example a $K$ knots $(t_1<t_2<...<t_K)$ RCS quantile regression can be formulated as
 
-$$ Q_{Y|X}(\tau)=\beta_0+\sum_{k=1}^K \beta_k \times S_k $$
+$$ Q_{Y|x}(\tau)=\beta_{\tau,0}+\sum_{j=1}^K \beta_{\tau,j} \times S_j $$
 
 where
 
 $$ s_1 = x $$
 
-$$ s_k = (x-t_{k-1})_{+}^3 - (x-t_{k-1})_{+}^3$$
+and
+
+$$ s_j = (x-t_{j-1})^3I(x-t_{j-1}>0) - (x-t_{K-1})^3I(x-t_{K-1}>0)\frac{(t_{K}-t_{j-1}>0)}{(t_{K}-t_{K-1}>0)} + (x-t_{K})^3I(x-t_{K}>0)\frac{(t_{K-1}-t_{j-1}>0)}{(t_{K}-t_{K-1}>0)}$$
 
 B-splines are piecewise polynomial functions that allow for the modeling of complex relationships in data without the constraints imposed by traditional linear formulations.
 
