@@ -28,6 +28,8 @@
 
 [2.2 Horizontal Federated LQR Algorithm](#22-horizontal-federated-lqr-algorithms) 
 
+[3.1 Extension of LQR: Allowing for nonlinearity](#31-extension-of-lqr-allowing-for-nonlinearity)
+
 [References](#references) 
 
 ##
@@ -183,6 +185,25 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > $\Phi(\cdot)$ is the cumulative distribution function (CDF) of a standard normal distribution and <br>
 > $\phi(\cdot)$ is the probability density function (PDF) of a standard normal distribution.<br>
 > $Q_u(\cdot)$ is the quantile function of u. <br>
+
+##
+
+### 3.1 Extension of LQR: Allowing for nonlinearity
+
+Nonlinearity can be modelled by extending the LQR using **Restricted Cubic Splines (RCS)** functions. 
+
+For example a K knots RCS quantile regression can be formulated as
+
+$$ Q_{Y|X}(\tau)=\beta_0+\sum_{k=1}^K \beta_k \times S_k $$
+
+where
+
+$$ s_1 = x $$
+
+$$ s_k = (x-t_{k-1})_{+}^3 - (x-t_{k-1})_{+}^3$$
+
+B-splines are piecewise polynomial functions that allow for the modeling of complex relationships in data without the constraints imposed by traditional linear formulations.
+
 
 ##
 
