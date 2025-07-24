@@ -30,6 +30,8 @@
 
 [3.1 Extension of LQR: Allowing for nonlinearity](#31-extension-of-lqr-allowing-for-nonlinearity)
 
+[3.2 Extension of LQR: Estimation for multiple non-crossing quantile estimation](32-extension-of-lqr-estimation-for-multiple-non-crossing-quantile-estimation)
+
 [References](#references) 
 
 ##
@@ -211,13 +213,13 @@ In LQR, the non-crossing constraints are equivalent to $X\beta_{\tau_i} < X\beta
 
 which can be solved by **Inequality Constrained Least-Squares (ICLS) estimation**[^11]:
 
-estimation for $y=X\beta+e$ with $A\beta \ge c$ is given by
+> Estimation for $y=X\beta+e$ with $A\beta \ge c$ is given by <br>
+> $\hat\beta^* = \hat\beta (c-A\hat\beta)$ if $A \hat\beta^* \gg c$ <br>
+> OR <br>
+> $\hat\beta^* = \hat\beta + (X^T X)^{-1} A^T(A(X^T X)^{-1}A^T)^{-1} (c-A\hat\beta)$ if $A \hat\beta^* = c$ <br>
+> where $\hat\beta = (X^T X)^{-1} (X^T y)$. <br>
 
-$\hat\beta^* = \hat\beta (c-A\hat\beta)$ if $A \hat\beta^* \gg c$
-
-$\hat\beta^* = \hat\beta + (X^T X)^{-1} A^T(A(X^T X)^{-1}A^T)^{-1} (c-A\hat\beta)$ if $A \hat\beta^* = c$ AND
-
-where $\hat\beta = (X^T X)^{-1} (X^T y)$.
+By combining the horizontal federated LQR IRLS algorithm together with the ICLS method, simultaneous non-crossing LQR can also be solved in horizontal federated learning.
 
 ##
 
