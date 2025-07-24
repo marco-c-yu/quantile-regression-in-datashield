@@ -200,9 +200,9 @@ $$ Q_{Y|x}(\tau)=\beta_{\tau,0}+\sum_{j=1}^{K-1} \beta_{\tau,j} \times s_j $$
 
 where $s_1 = x$ and
 
-$$ s_j = (x-t_{j-1})^3I(x-t_{j-1}>0) - (x-t_{K-1})^3I(x-t_{K-1}>0)\frac{(t_{K}-t_{j-1}>0)}{(t_{K}-t_{K-1}>0)} + (x-t_{K})^3I(x-t_{K}>0)\frac{(t_{K-1}-t_{j-1}>0)}{(t_{K}-t_{K-1}>0)}$$
+$s_j = (x-t_{j-1})^3I(x-t_{j-1}>0) - (x-t_{K-1})^3I(x-t_{K-1}>0)\frac{(t_{K}-t_{j-1}>0)}{(t_{K}-t_{K-1}>0)} + (x-t_{K})^3I(x-t_{K}>0)\frac{(t_{K-1}-t_{j-1}>0)}{(t_{K}-t_{K-1}>0)}$ for $j=2,...,K-1$
 
-By storing $s_1$ to $s_{K-1}$ as $(K-2)$ variables in the datasets, it reduced to a LQR problem of fitting the quantile of Y on $s_1$, $s_2$,..., $s_{K-1}$.
+By storing $s_1$ to $s_{K-1}$ as variables in the datasets, it reduced to a LQR problem of fitting the quantile of Y on $s_1$, $s_2$,..., $s_{K-1}$.
 
 ### 3.2 Extension of LQR: Estimation for multiple non-crossing quantile estimation
 
