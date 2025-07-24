@@ -1,6 +1,6 @@
 # Technical Note: <br> Horizontal Federated Linear Quantile Regression (LQR)
 
-**Content of this repository is part of a working paper from the [Asian Eye Epidemiology Consortium (AEEC)](https://www.snec.com.sg/research-innovation/research-groups-platforms/research-groups/ocular-epidemiology) affiliate with [Singapore Eye Research Institute](https://www.snec.com.sg/research-innovation/about-seri).**
+**Content of this repository is part of a working paper from the [Asian Eye Epidemiology Consortium (AEEC)](https://www.snec.com.sg/research-innovation/research-groups-platforms/research-groups/ocular-epidemiology), <br>affiliate with [Singapore Eye Research Institute](https://www.snec.com.sg/research-innovation/about-seri).**
 
 #### Developer (for mathematical theory and R program DataSHIELD implementation)
 
