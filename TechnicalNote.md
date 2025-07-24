@@ -190,7 +190,7 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > * $\phi(\cdot)$ is the probability density function (PDF) of a standard normal distribution.<br>
 > * $Q_u(\cdot)$ is the quantile function of u. <br>
 > * This federated LQR PK estimator will give the same variance of coefficients estimate as the pooled LQR PK estimator with assess to all Individual Participant Data (IPD) <br>
-> * In R, the solution in **[DataSHIELD_LQR.R](DataSHIELD_LQR.R)** will be the same as the variance of coefficients estimated in **quantreg::summary.rq(...,se='ker',...)** (the summary.rq function in quantreg package with method used to compute standard standard errors specified as 'ker') <br>
+> * In R, the solution in **[DataSHIELD_LQR.R](DataSHIELD_LQR.R)** will be the same as the variance of coefficients estimated in **quantreg::summary.rq(...,se='ker',...)** (the summary.rq function in quantreg package with method used to compute standard errors specified as 'ker') <br>
 
 ##
 
