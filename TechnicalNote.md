@@ -211,7 +211,7 @@ $Q_{Y|x}(\tau_i) < Q_{Y|x}(\tau_j) \iff \tau_i < \tau_j$
 
 In LQR, the non-crossing constraints are equivalent to $X\beta_{\tau_i} < X\beta_{\tau_j} \iff \tau_i < \tau_j$,
 
-which can be solved by **Inequality Constrained Least-Squares (ICLS)**[^11]:
+which can be solved by **Inequality Constrained Least-Squares (ICLS)**[^11]<sup>,</sup>[^12]:
 
 > Estimation for $y=X\beta+e$ with $(A_1 \hat\beta^* \gg c_1)$ and $(A_2 \hat\beta^* = c_2)$ is given by <br>
 > $\hat\beta^* = \hat\beta + (X^T X)^{-1} A_2^T(A_2(X^T X)^{-1}A_2^T)^{-1} (c_2-A_2\hat\beta)$ <br>
@@ -244,3 +244,5 @@ By combining the horizontal federated LQR IRLS algorithm together with the ICLS 
 [^10]: Marrie, R. A., Dawson, N. V., & Garland, A. (2009). Quantile regression and restricted cubic splines are useful for exploring relationships between continuous variables. Journal of Clinical Epidemiology, 62(5), 511-517.e1. https://doi.org/10.1016/J.JCLINEPI.2008.05.015
 
 [^11]: Liew, C. K. (1976). Inequality Constrained Least-Squares Estimation. Journal of the American Statistical Association, 71(355), 746. https://doi.org/10.2307/2285614
+
+[^12]: Goldfarb, D., & Idnani, A. (1983). A numerically stable dual method for solving strictly convex quadratic programs. Mathematical Programming, 27(1), 1–33. https://doi.org/10.1007/BF02591962
