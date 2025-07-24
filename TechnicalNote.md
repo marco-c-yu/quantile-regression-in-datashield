@@ -217,7 +217,7 @@ which can be solved by **Inequality Constrained Least-Squares (ICLS)**[^11]:
 > $\hat\beta^* = \hat\beta + (X^T X)^{-1} A_2^T(A_2(X^T X)^{-1}A_2^T)^{-1} (c_2-A_2\hat\beta)$ <br>
 > where $\hat\beta = (X^T X)^{-1} (X^T y)$. <br>
 
-By combining the horizontal federated LQR IRLS algorithm together with the ICLS method, simultaneous non-crossing LQR can also be solved in horizontal federated learning.
+By combining the horizontal federated LQR IRLS algorithm together with the ICLS method, simultaneous non-crossing LQR can also be solved iteratively by matrix calculation in horizontal federated learning.
 
 ##
 
