@@ -1,6 +1,6 @@
 # Linear Quantile Regression (LQR) in DataSHIELD <br>- A Horizontal Federated Quantile Regression Method
 
-**Content of this repository is part of a working paper affiliate with Singapore Eye Research Institute.**
+**Content of this repository is part of a working paper from the [Asian Eye Epidemiology Consortium (AEEC)](https://www.snec.com.sg/research-innovation/research-groups-platforms/research-groups/ocular-epidemiology) affiliate with [Singapore Eye Research Institute](https://www.snec.com.sg/research-innovation/about-seri).**
 
 #### Developer (for mathematical theory and R program DataSHIELD implementation)
 
