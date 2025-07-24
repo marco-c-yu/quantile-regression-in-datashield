@@ -213,11 +213,11 @@ which can be solved by **Inequality Constrained Least-Squares (ICLS) estimation*
 
 estimation for $y=X\beta+e$ with $A\beta \ge c$ is given by
 
-|$\hat\beta^* = \hat\beta (c-A\hat\beta)$ |if $A \hat\beta^* >> c$
-|$\hat\beta^* = \hat\beta + (X^T X)^{-1} A^T(A(X^T X)^{-1}A^T)^{-1} (c-A\hat\beta)$ |if $A \hat\beta^* = c$ AND
+$\hat\beta^* = \hat\beta (c-A\hat\beta)$ if $A \hat\beta^* >> c$
 
-where $\hat\beta = (X^T X)^{-1} (X^T y)$
+$\hat\beta^* = \hat\beta + (X^T X)^{-1} A^T(A(X^T X)^{-1}A^T)^{-1} (c-A\hat\beta)$ if $A \hat\beta^* = c$ AND
 
+where $\hat\beta = (X^T X)^{-1} (X^T y)$.
 
 ##
 
