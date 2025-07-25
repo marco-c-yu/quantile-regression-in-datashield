@@ -24,7 +24,7 @@ Mathematical details of this horizontal federated quantile regression can refer 
 
 The R program, **[DataSHIELD_LQR.R](DataSHIELD_LQR.R)**, was developed for performing **linear quantile regression (LQR)** using **[DataSHIELD](https://datashield.org/)**.
 
-The R program, **[DataSHIELD_LQR_for_only_one_predictor.R](DataSHIELD_LQR_for_only_one_predictor.R)**, was developed for estimating **unconditional quantile** in DataSHIELD by fitting LQR with Intercept as the predictor.
+The R program, **[DataSHIELD_LQR_for_only_one_predictor.R](DataSHIELD_LQR_for_only_one_predictor.R)**, was developed for estimating **unconditional quantile** in **DataSHIELD** by fitting LQR with Intercept as the predictor.
 
 ##
 
