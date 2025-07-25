@@ -42,7 +42,7 @@ require('quantreg')
   # categorical variables should be coded into dummary variables with values 0/1 in DM
   # here I assumed the last column as the Intercept as we created it after loading the data DM, so that Intercept will be listed as the last column
   xcs = 2:5
-  
+
   # the inital the column vector of regression coefficients (beta) to be used
   # a reasonable inital can be the unconditional tau-th quantile value
   # assuming the last column is the Intercept, so all previous beta elements are 0, keeping the last element to be the unconditional tau-th quantile value (assumed to be 20 in this example)
@@ -51,10 +51,11 @@ require('quantreg')
 # initalize IRLS optimization parameters
 {
   # IRLS iterative calculation will be ended IF
-  # { max(|b1-b0|)<maxatol AND max(|b1-b0|/(b0+1e-8))<maxrtol }
+  # { max(|b1-b0|)<maxatol AND max(|b1-b0|/(b0+sigdigit))<maxrtol }
   # OR { total number of iteration > maxiter }
   maxatol = 1e-4 # max absolute tolerence
   maxrtol = 1e-3 # max relative tolerence
+  sigdigit = 1e-8 # used together with maxrtol
   maxiter = 200 # max number of iteration
   
   Delta2=1e-8 # a small Delta^2 value to avoid division by 0 in calculating the W matrix
@@ -62,7 +63,7 @@ require('quantreg')
 }
 ##########
 
-# perform quantile regression from DataSHIELD
+# perform linear quantile regression from DataSHIELD
 ####################
 # define the complete data (X,y) as DXy
 # define MX,My as matrices X and y, and b as the beta vector for matrix calculation
@@ -183,7 +184,7 @@ ds.returnXX <- function(D,datasources=connections) {
     # solve updated beta
     b1 = lqrWLS.solve(mat.ds$XWX,mat.ds$XWy)$b
     atol = max(abs(b0-b1))
-    rtol = max(abs((b0-b1)/(b0+1e-8)))
+    rtol = max(abs((b0-b1)/(b0+sigdigit)))
     r = r+1
     iter <- rbind(iter,c(b1,atol,rtol))
   }
@@ -256,7 +257,8 @@ sol$Vb = Vb
   sol$table$b = sol$b # hat_beta, the IRLS estimator of regression coefficients
   sol$table$se = sqrt(diag(sol$Vb)) # Powell's kernel estimator of the standard error of hat_beta
   sol$table = as.data.frame(sol$table)
-  rownames(sol$table) = paste('column',xcs)
+  # rownames(sol$table) = paste('column',xcs)
+  rownames(sol$table) = ds.colnames(x="DM",datasources = connections[1])[xcs]
   sol$table$b.lcl = sol$table$b + qnorm(0.025)*sol$table$se # 95% lower confidence limit of beta
   sol$table$b.ucl = sol$table$b + qnorm(1-0.025)*sol$table$se # 95% upper confidence limit of beta
   sol$table$p = pnorm(-abs(sol$table$b/sol$table$se))*2 # two-sided Wald test p-value for beta = 0
