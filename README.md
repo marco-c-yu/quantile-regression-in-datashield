@@ -22,7 +22,9 @@ Mathematical details of this horizontal federated quantile regression can refer 
 
 ## R program
 
-The R program was developed for performing **linear quantile regression (LQR)** using **[DataSHIELD](https://datashield.org/)**.
+The R program, **[DataSHIELD_LQR.R](DataSHIELD_LQR.R)**, was developed for performing **linear quantile regression (LQR)** using **[DataSHIELD](https://datashield.org/)**.
+
+The R program, **[DataSHIELD_LQR_for_only_one_predictor.R](DataSHIELD_LQR_for_only_one_predictor.R)**, was developed for estimating **unconditional quantile** in DataSHIELD by fitting LQR with Intercept as the predictor.
 
 ##
 
@@ -37,8 +39,11 @@ Tested in R version 4.1.2
 > **quantreg** (tested version: 5.94) <br>
 
 **[DataSHIELD_LQR.R](DataSHIELD_LQR.R)** recorded the script for estimating the regression coefficients and the variance of coefficients for linear quantile regression model. 
-Regression coefficients were estimated by Iterative Weighted Least Squares (IWLS). [^1]<sup>,</sup>[^2] 
+Regression coefficients were estimated by Iterative Reweighted Least Squares (IRLS). [^1]<sup>,</sup>[^2] 
 Variance of regression coefficients were estimated by Powell’s kernel estimator. [^3]<sup>,</sup>[^4] 
+
+**[DataSHIELD_LQR_for_only_one_predictor.R](DataSHIELD_LQR_for_only_one_predictor.R)** is similar to **[DataSHIELD_LQR.R](DataSHIELD_LQR.R)**,
+which estimate unconditional quantile by IRLS without variance estimation.
 
 ##
 
