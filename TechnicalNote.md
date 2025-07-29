@@ -155,7 +155,7 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > ###### Remarks:
 > * $y_m$ and $X_m$ represents the observed response and predictors in the m-th party. <br>
 > * $(X_m^TW_{m,t}X_m)$ and $(X_m^TW_{m,t}y_m)$ can be derived from the mean and covariance matrix of $(W_{m,t}^{1/2}X_m)$ and $(W_{m,t}^{1/2}y_m)$ using the property $Cov(X,Y)=E(XY)-E(X)E(Y)$ <br>
-> * This federated LQR IRLS estimator will give the same estimate as the pooled LQR with assess to all Individual Participant Data (IPD). Therefore, it has the same asymptotic properties as the pooled IRLS estimator. <br>
+> * This federated LQR IRLS estimator will give the same estimate as the pooled LQR with access to all Individual Participant Data (IPD). Therefore, it has the same asymptotic properties as the pooled IRLS estimator. <br>
 > * In R, the solution in **[DataSHIELD_LQR.R](DataSHIELD_LQR.R)** will be the same as the regression coefficients estimated in **quantreg::rq** (the rq function in quantreg package) <br>
 
 > #### Algorithm 2: Powell's kernel (PK) estimator of the variance of coefficients of horizontal federated LQR[^5]<sup>,</sup>[^6] <br>
@@ -189,7 +189,7 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > * $\Phi(\cdot)$ is the cumulative distribution function (CDF) of a standard normal distribution and <br>
 > * $\phi(\cdot)$ is the probability density function (PDF) of a standard normal distribution.<br>
 > * $Q_u(\cdot)$ is the quantile function of u. <br>
-> * This federated LQR PK estimator will give the same variance of coefficients estimate as the pooled LQR PK estimator with assess to all Individual Participant Data (IPD). Therefore, it has the same asymptotic properties as the pooled PK estimator. <br>
+> * This federated LQR PK estimator will give the same variance of coefficients estimate as the pooled LQR PK estimator with access to all Individual Participant Data (IPD). Therefore, it has the same asymptotic properties as the pooled PK estimator. <br>
 > * In R, the solution in **[DataSHIELD_LQR.R](DataSHIELD_LQR.R)** will be the same as the variance of coefficients estimated in **quantreg::summary.rq(...,se='ker',...)** (the summary.rq function in quantreg package with method used to compute standard errors specified as 'ker') <br>
 
 ##
