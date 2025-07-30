@@ -1,4 +1,4 @@
-# Technical Note: <br> Horizontal Federated Linear Quantile Regression (LQR)
+# Technical Note: <br> Horizontal Federated Linear Quantile Regression (LQR) <br> based on Iteratively Reweighted Least Squares (IRLS) method
 
 **Content of this repository is part of a working paper from the [Asian Eye Epidemiology Consortium (AEEC)](https://www.snec.com.sg/research-innovation/research-groups-platforms/research-groups/ocular-epidemiology), <br>affiliate with [Singapore Eye Research Institute](https://www.snec.com.sg/research-innovation/about-seri).**
 
@@ -81,7 +81,7 @@ $$ w_i=\frac{ \tau I(y_i \ge X_i\beta_\tau ) + (1- \tau ) I(y_i < X_i\beta_\tau 
 It can be considered as an **Iteratively Reweighted Least Squares (IRLS)**[^3], 
 
 so that $\beta_\tau$ can be esimated iteratively by 
-$\hat\beta_\tau = \lim_{n\to\infty} \hat\beta_{\tau;t}$, 
+$\hat\beta_\tau = \lim_{t\to\infty} \hat\beta_{\tau;t}$, 
 such that
 
 $$ \hat\beta_{\tau;t+1} = {arg\max} \\{ \sum_{y_i} [w_{i;t}( y_i - X_i \hat\beta_{\tau;t+1} )^2] \\} = (X^TW_tX)^{-1}X^TW_ty $$
