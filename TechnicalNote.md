@@ -120,6 +120,11 @@ where $\hat\beta_{\tau,j}$ is the j-th element of $\hat\beta_\tau$,
 $\sigma_{\beta,\tau,j}^2$ is the $(j,j)$ element of $\Sigma_{\beta,\tau}$ and 
 $\Phi(\cdot)$ is the cumulative distribution function (CDF) of a standard normal distribution.
 
+Hypothesis testing for $H_0: \beta_{\tau,j} = \beta_0$ vs $H_1: \beta_{\tau,j} \neq \beta_0$ 
+can be performed by Wald test with two-sided p-value given by
+
+$$p-value = 2 \times \Phi(-|\hat\beta_{\tau,j}-\beta_0| / (\sigma_{\beta,\tau,j}^2 /n)^{1/2})$$
+
 ##
 
 ### 2.1 Horizontal Federated Learning
