@@ -112,6 +112,10 @@ $$ \hat J_\tau = \frac{1}{nh} \sum_{i=1}^{n} K(\frac{y_i - X_i \hat\beta_\tau}{h
 
 where $K(\cdot)$ is a kernel density function.[^6]<sup>,</sup>[^7]
 
+The $(1-\alpha) \times 100%$ confidence interval of $\beta_\tau$ can be estimated by
+
+$$\hat\beta_\tau \pm \Phi^{-1}(1-\alpha/2) \sqrt{\Sigma_{\beta,\tau} /n} $$
+
 ##
 
 ### 2.1 Horizontal Federated Learning
