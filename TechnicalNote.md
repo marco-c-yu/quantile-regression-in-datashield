@@ -155,7 +155,7 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > * $(X_m^TW_{m,t}X_m)$ and $(X_m^TW_{m,t}y_m)$ can be derived from the mean and covariance matrix of $(W_{m,t}^{1/2}X_m)$ and $(W_{m,t}^{1/2}y_m)$ using the property $Cov(X,Y)=E(XY)-E(X)E(Y)$ <br>
 > * This federated LQR IRLS estimator will give the same estimate as the pooled LQR with access to all Individual Participant Data (IPD). <br>
 
-> #### Algorithm 2: Powell's kernel (PK) estimator of the variance of coefficients of horizontal federated LQR[^6]<sup>,</sup>[^7]<sup>,</sup>[^10] <br>
+> #### Algorithm 2: Powell's kernel (PK) estimator of the variance of coefficients of horizontal federated LQR[^6]<sup>,</sup>[^7] <br>
 > 1: Obtain the IRLS estimator of regression coefficients, $\hat\beta_\tau$, in Algorithm 1. <br>
 > <br>
 > In server, <br>
@@ -212,11 +212,15 @@ $Q_{Y|x}(\tau_i) < Q_{Y|x}(\tau_j) \iff \tau_i < \tau_j$
 
 In LQR, the non-crossing constraints are equivalent to $X\beta_{\tau_i} < X\beta_{\tau_j} \iff \tau_i < \tau_j$,
 
-which can be solved by **Inequality Constrained Least-Squares (ICLS)**[^12]<sup>,</sup>[^13]:
+which can be solved by **Inequality Constrained Least-Squares (ICLS)**[^12]<sup>,</sup>[^13] in combining with **Iteratively Reweighted Least Squares (IRLS)**[^3]<sup>,</sup>[^4].
 
-> Estimation for $y=X\beta+e$ with $(A_1 \hat\beta^* \gg c_1)$ and $(A_2 \hat\beta^* = c_2)$ is given by <br>
-> $\hat\beta^* = \hat\beta + (X^T X)^{-1} A_2^T(A_2(X^T X)^{-1}A_2^T)^{-1} (c_2-A_2\hat\beta)$ <br>
-> where $\hat\beta = (X^T X)^{-1} (X^T y)$. <br>
+> In each iteration <br>
+> 1. Solve the unconstrainted regression coefficients by **Weighted Least Squares (WLS)**: $\hat\beta=(X^TW_tX)^{-1}X^TW_ty$ <br>
+> 2. Estimate $\hat\beta^* $ with constraints $(A_1 \hat\beta^* \gg c_1)$ and $(A_2 \hat\beta^* = c_2)$ by **ICLS** <br>
+> $\hat\beta^* = \hat\beta + (Z^T Z)^{-1} A_2^T(A_2(Z^T Z)^{-1}A_2^T)^{-1} (c_2-A_2\hat\beta)$ <br>
+> where $Z=W^{1/2}X$. <br>
+> 3. Update the diagonal matrix $W$ by $w_i=\frac{ \tau I(y_i \ge X_i \hat\beta^* ) + (1- \tau ) I(y_i < X_i \hat\beta^* ) }{\sqrt{(y_i - X_i \hat\beta^*)^2 + \Delta^2}}$. <br>
+> Repeat steps 1-3 until $\hat\beta^* $ converged
 
 By combining the horizontal federated LQR IRLS algorithm together with the ICLS method, simultaneous non-crossing LQR can also be solved iteratively by matrix calculation in horizontal federated learning.
 
