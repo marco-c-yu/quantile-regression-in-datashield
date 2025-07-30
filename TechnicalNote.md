@@ -114,9 +114,11 @@ where $K(\cdot)$ is a kernel density function.[^6]<sup>,</sup>[^7]
 
 The $(1-\alpha) \times 100\\%$ confidence interval of $\beta_{\tau,j}$ for the j-th predictor variable can be estimated by
 
-$$\hat\beta_{\tau,j} \pm \Phi^{-1}(1-\alpha/2) (\sigma_{\beta,\tau,j}^2 /n)^{1/2} $$
+$$\hat\beta_{\tau,j} \pm \Phi^{-1}(1-\alpha/2) \times (\sigma_{\beta,\tau,j}^2 /n)^{1/2} $$
 
-where $\hat\beta_{\tau,j}$ is the j-th element of $\hat\beta_\tau$ and $\sigma_{\beta,\tau,j}^2$ is the $(j,j)$ element of $\Sigma_{\beta,\tau}$.
+where $\hat\beta_{\tau,j}$ is the j-th element of $\hat\beta_\tau$, 
+$\sigma_{\beta,\tau,j}^2$ is the $(j,j)$ element of $\Sigma_{\beta,\tau}$ and 
+$\Phi(\cdot)$ is the cumulative distribution function (CDF) of a standard normal distribution.
 
 ##
 
