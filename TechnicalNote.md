@@ -78,7 +78,7 @@ where
 
 $$ w_i=\frac{ \tau I(y_i \ge X_i\beta_\tau ) + (1- \tau ) I(y_i < X_i\beta_\tau ) }{\sqrt{(y_i-X_i\beta_\tau)^2}} $$
 
-It can be considered as an **Iteratively Reweighted Least Squares (IRLS)**[^3], 
+It can be considered as an **Iteratively Reweighted Least Squares (IRLS)**[^3]<sup>,</sup>[^4], 
 
 so that $\beta_\tau$ can be esimated iteratively by 
 $\hat\beta_\tau = \lim_{t\to\infty} \hat\beta_{\tau;t}$, 
@@ -98,7 +98,7 @@ for numerical stability.
 
 ### 1.4 Asymptotic normality of the regression coefficients estimator of LQR
 
-Under suitable **regularity conditions**[^4], $\hat\beta_\tau$ is a $\sqrt{n}$-consistent estimator of $\beta_\tau$ and 
+Under suitable **regularity conditions**[^5], $\hat\beta_\tau$ is a $\sqrt{n}$-consistent estimator of $\beta_\tau$ and 
 
 $$\sqrt{n}(\hat\beta_\tau - \beta_\tau) \rightarrow N(0,\Sigma_{\beta,\tau})$$
 
@@ -110,9 +110,7 @@ $J_\tau$ can be estimated by the **Powell's kernel (PK) estimator**
 
 $$ \hat J_\tau = \frac{1}{nh} \sum_{i=1}^{n} K(\frac{y_i - X_i \hat\beta_\tau}{h}) X_i^T X_i $$
 
-where $K(\cdot)$ is a kernel density function.[^5]<sup>,</sup>[^6]
-
-The default selection of kernel density function $K(\cdot)$ and bandwidth $h$ implemented in **summary.rq** and **bandwidth.rq** functions in the **quantreg**[^7] package in **R** was used in this LQR inference.
+where $K(\cdot)$ is a kernel density function.[^6]<sup>,</sup>[^7]
 
 ##
 
@@ -130,11 +128,11 @@ In [1.3](#13-iteratively-reweighted-least-squares-irls-method-for-lqr), we showe
 
 it is similar to the algorithm for solving federated generalized linear model (GLM).[^9]
 
-Estimation for variance of coefficient follows the implementation of Powell's kernel estimator in the **quantreg**[^7] package in **R**.
+Estimation for variance of coefficient follows the implementation of Powell's kernel estimator in the **quantreg**[^10] package in **R**.
 
 The proposed algorithms for regression coefficients and variance of coefficients estimation of horizontal federated LQR are summarized as follow:
 
-> #### Algorithm 1: IRLS estimator of the regression coefficients of horizontal federated LQR[^3]<sup>,</sup>[^9] <br>
+> #### Algorithm 1: IRLS estimator of the regression coefficients of horizontal federated LQR[^4]<sup>,</sup>[^9] <br>
 > In server, <br>
 > 1: initialize an inital estimatior, $\beta_{\tau;0}$ <br>
 > <br>
@@ -155,10 +153,9 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > ###### Remarks:
 > * $y_m$ and $X_m$ represents the observed response and predictors in the m-th party. <br>
 > * $(X_m^TW_{m,t}X_m)$ and $(X_m^TW_{m,t}y_m)$ can be derived from the mean and covariance matrix of $(W_{m,t}^{1/2}X_m)$ and $(W_{m,t}^{1/2}y_m)$ using the property $Cov(X,Y)=E(XY)-E(X)E(Y)$ <br>
-> * This federated LQR IRLS estimator will give the same estimate as the pooled LQR with access to all Individual Participant Data (IPD). Therefore, it has the same asymptotic properties as the pooled IRLS estimator. <br>
-> * In R, the solution in **[DataSHIELD_LQR.R](DataSHIELD_LQR.R)** will be the same as the regression coefficients estimated in **quantreg::rq** (the rq function in quantreg package) <br>
+> * This federated LQR IRLS estimator will give the same estimate as the pooled LQR with access to all Individual Participant Data (IPD). <br>
 
-> #### Algorithm 2: Powell's kernel (PK) estimator of the variance of coefficients of horizontal federated LQR[^5]<sup>,</sup>[^6] <br>
+> #### Algorithm 2: Powell's kernel (PK) estimator of the variance of coefficients of horizontal federated LQR[^6]<sup>,</sup>[^7]<sup>,</sup>[^10] <br>
 > 1: Obtain the IRLS estimator of regression coefficients, $\hat\beta_\tau$, in Algorithm 1. <br>
 > <br>
 > In server, <br>
@@ -186,17 +183,17 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > 15: estimate the variance of coefficients by $\hat\Sigma_{\beta,\tau}/n = \tau(1-\tau) H^{-1} (X^T X) H^{-1}/n$ <br>
 > <br>
 > ###### Remarks:
+> This algorithm implemented the default selection of kernel density function $K(\cdot)$ and bandwidth $h$ implemented in **summary.rq** and **bandwidth.rq** functions in the **quantreg**[^10] package in **R**. <br>
 > * $\Phi(\cdot)$ is the cumulative distribution function (CDF) of a standard normal distribution and <br>
 > * $\phi(\cdot)$ is the probability density function (PDF) of a standard normal distribution.<br>
 > * $Q_u(\cdot)$ is the quantile function of u. <br>
-> * This federated LQR PK estimator will give the same variance of coefficients estimate as the pooled LQR PK estimator with access to all Individual Participant Data (IPD). Therefore, it has the same asymptotic properties as the pooled PK estimator. <br>
-> * In R, the solution in **[DataSHIELD_LQR.R](DataSHIELD_LQR.R)** will be the same as the variance of coefficients estimated in **quantreg::summary.rq(...,se='ker',...)** (the summary.rq function in quantreg package with method used to compute standard errors specified as 'ker') <br>
+> * This federated LQR PK estimator will give the same variance of coefficients estimate as the pooled LQR PK estimator with access to all Individual Participant Data (IPD). <br>
 
 ##
 
 ### 3.1 Extension of LQR: Allowing for nonlinearity
 
-Nonlinearity can be modelled by extending the LQR using **Restricted Cubic Splines (RCS)** functions.[^10]
+Nonlinearity can be modelled by extending the LQR using **Restricted Cubic Splines (RCS)** functions.[^11]
 
 For example a $K$ knots $(t_1<t_2<...<t_K)$ RCS quantile regression can be formulated as
 
@@ -215,7 +212,7 @@ $Q_{Y|x}(\tau_i) < Q_{Y|x}(\tau_j) \iff \tau_i < \tau_j$
 
 In LQR, the non-crossing constraints are equivalent to $X\beta_{\tau_i} < X\beta_{\tau_j} \iff \tau_i < \tau_j$,
 
-which can be solved by **Inequality Constrained Least-Squares (ICLS)**[^11]<sup>,</sup>[^12]:
+which can be solved by **Inequality Constrained Least-Squares (ICLS)**[^12]<sup>,</sup>[^13]:
 
 > Estimation for $y=X\beta+e$ with $(A_1 \hat\beta^* \gg c_1)$ and $(A_2 \hat\beta^* = c_2)$ is given by <br>
 > $\hat\beta^* = \hat\beta + (X^T X)^{-1} A_2^T(A_2(X^T X)^{-1}A_2^T)^{-1} (c_2-A_2\hat\beta)$ <br>
@@ -227,26 +224,28 @@ By combining the horizontal federated LQR IRLS algorithm together with the ICLS 
 
 ### References
 
-[^1]: Furno, M., & Vistocco, D. (2018). Quantile regression: Estimation and simulation. Wiley. https://doi.org/10.1002/9781118863718
+[^1]: Koenker, R., & Bassett, G. (1978). Regression Quantiles. Econometrica, 46(1), 33. https://doi.org/10.2307/1913643
 
-[^2]: Waltrup, L. S., Sobotka, F., Kneib, T., & Kauermann, G. (2015). Expectile and quantile regression—David and Goliath? Statistical Modelling, 15(5), 433–456. https://doi.org/10.1177/1471082X14561155 
+[^2]: Furno, M., & Vistocco, D. (2018). Quantile regression: Estimation and simulation. Wiley. https://doi.org/10.1002/9781118863718
 
-[^3]: Schnabel, S. K., & Eilers, P. H. C. (2013). Simultaneous estimation of quantile curves using quantile sheets. AStA Advances in Statistical Analysis, 97(1), 77–87. https://doi.org/10.1007/s10182-012-0198-1
+[^3]: Schlossmacher, E. J. (1973). An iterative technique for absolute deviations curve fitting. Journal of the American Statistical Association, 68(344), 857–859. https://doi.org/10.1080/01621459.1973.10481436;PAGE:STRING:ARTICLE/CHAPTER
 
-[^4]: Koenker, R. (2005). Quantile Regression (pp. 116-150). Cambridge University Press. https://doi.org/10.1017/CBO9780511754098
+[^4]: Schnabel, S. K., & Eilers, P. H. C. (2013). Simultaneous estimation of quantile curves using quantile sheets. AStA Advances in Statistical Analysis, 97(1), 77–87. https://doi.org/10.1007/s10182-012-0198-1
 
-[^5]: Koenker, R. (2005). Quantile Regression (pp. 80-81). Cambridge University Press. https://doi.org/10.1017/CBO9780511754098
+[^5]: Koenker, R. (2005). Quantile Regression (pp. 116-150). Cambridge University Press. https://doi.org/10.1017/CBO9780511754098
 
-[^6]: Kato, K. (2012). Asymptotic normality of Powell’s kernel estimator. Annals of the Institute of Statistical Mathematics, 64(2), 255–273. https://doi.org/10.1007/s10463-010-0310-9 
+[^6]: Koenker, R. (2005). Quantile Regression (pp. 80-81). Cambridge University Press. https://doi.org/10.1017/CBO9780511754098
 
-[^7]: Roger Koenker (2022). quantreg: Quantile Regression. R package version 5.94. https://CRAN.R-project.org/package=quantreg
+[^7]: Kato, K. (2012). Asymptotic normality of Powell’s kernel estimator. Annals of the Institute of Statistical Mathematics, 64(2), 255–273. https://doi.org/10.1007/s10463-010-0310-9 
 
 [^8]: Yang, Q., Liu, Y., Chen, T., & Tong, Y. (2019). Federated Machine Learning: Concept and Applications. ACM Transactions on Intelligent Systems and Technology, 10(2), 19. https://doi.org/10.1145/3298981
 
 [^9]: Cellamare, M., van Gestel, A. J., Alradhi, H., Martin, F., & Moncada-Torres, A. (2022). A Federated Generalized Linear Model for Privacy-Preserving Analysis. Algorithms 2022, Vol. 15, Page 243, 15(7), 243. https://doi.org/10.3390/A15070243
 
-[^10]: Marrie, R. A., Dawson, N. V., & Garland, A. (2009). Quantile regression and restricted cubic splines are useful for exploring relationships between continuous variables. Journal of Clinical Epidemiology, 62(5), 511-517.e1. https://doi.org/10.1016/J.JCLINEPI.2008.05.015
+[^10]: Roger Koenker (2022). quantreg: Quantile Regression. R package version 5.94. https://CRAN.R-project.org/package=quantreg
 
-[^11]: Liew, C. K. (1976). Inequality Constrained Least-Squares Estimation. Journal of the American Statistical Association, 71(355), 746. https://doi.org/10.2307/2285614
+[^11]: Marrie, R. A., Dawson, N. V., & Garland, A. (2009). Quantile regression and restricted cubic splines are useful for exploring relationships between continuous variables. Journal of Clinical Epidemiology, 62(5), 511-517.e1. https://doi.org/10.1016/J.JCLINEPI.2008.05.015
 
-[^12]: Goldfarb, D., & Idnani, A. (1983). A numerically stable dual method for solving strictly convex quadratic programs. Mathematical Programming, 27(1), 1–33. https://doi.org/10.1007/BF02591962
+[^12]: Liew, C. K. (1976). Inequality Constrained Least-Squares Estimation. Journal of the American Statistical Association, 71(355), 746. https://doi.org/10.2307/2285614
+
+[^13]: Goldfarb, D., & Idnani, A. (1983). A numerically stable dual method for solving strictly convex quadratic programs. Mathematical Programming, 27(1), 1–33. https://doi.org/10.1007/BF02591962
