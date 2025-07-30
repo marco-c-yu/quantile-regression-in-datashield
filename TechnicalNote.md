@@ -216,11 +216,11 @@ which can be solved by **Inequality Constrained Least-Squares (ICLS)**[^12]<sup>
 
 > In each iteration <br>
 > 1. Solve the unconstrainted regression coefficients by **Weighted Least Squares (WLS)**: $\hat\beta=(X^TW_tX)^{-1}X^TW_ty$ <br>
-> 2. Estimate $\hat\beta^* $ with constraints $(A_1 \hat\beta^* \gg c_1)$ and $(A_2 \hat\beta^* = c_2)$ by **ICLS** <br>
-> $\hat\beta^* = \hat\beta + (Z^T Z)^{-1} A_2^T(A_2(Z^T Z)^{-1}A_2^T)^{-1} (c_2-A_2\hat\beta)$ <br>
+> 2. Estimate $\hat\beta^c$ with constraints $(A_1 \hat\beta^c \gg c_1)$ and $(A_2 \hat\beta^c = c_2)$ by **ICLS** <br>
+> $\hat\beta^c = \hat\beta + (Z^T Z)^{-1} A_2^T(A_2(Z^T Z)^{-1}A_2^T)^{-1} (c_2-A_2\hat\beta)$ <br>
 > where $Z=W^{1/2}X$. <br>
-> 3. Update the diagonal matrix $W$ by $w_i=\frac{ \tau I(y_i \ge X_i \hat\beta^* ) + (1- \tau ) I(y_i < X_i \hat\beta^* ) }{\sqrt{(y_i - X_i \hat\beta^*)^2 + \Delta^2}}$. <br>
-> Repeat steps 1-3 until $\hat\beta^* $ converged
+> 3. Update the diagonal matrix $W$ by $w_i=\frac{ \tau I(y_i \ge X_i \hat\beta^c ) + (1- \tau ) I(y_i < X_i \hat\beta^c ) }{\sqrt{(y_i - X_i \hat\beta^c)^2 + \Delta^2}}$. <br>
+> Repeat steps 1-3 until $\hat\beta^c$ converged
 
 By combining the horizontal federated LQR IRLS algorithm together with the ICLS method, simultaneous non-crossing LQR can also be solved iteratively by matrix calculation in horizontal federated learning.
 
