@@ -212,7 +212,7 @@ $Q_{Y|x}(\tau_i) < Q_{Y|x}(\tau_j) \iff \tau_i < \tau_j$
 
 In LQR, the non-crossing constraints are equivalent to $X\beta_{\tau_i} < X\beta_{\tau_j} \iff \tau_i < \tau_j$,
 
-which can be solved by **Inequality Constrained Least-Squares (ICLS)**[^12]<sup>,</sup>[^13] in combining with **Iteratively Reweighted Least Squares (IRLS)**[^3]<sup>,</sup>[^4].
+which can be solved by **Inequality Constrained Least-Squares (ICLS)**[^12]<sup>,</sup>[^13] in combining with **Iteratively Reweighted Least Squares (IRLS)**[^3]<sup>,</sup>[^4]:
 
 > In each iteration, <br>
 > 1: Solve the unconstrainted regression coefficients by **Weighted Least Squares (WLS)**: $\hat\beta=(X^TW_tX)^{-1}X^TW_ty$ <br>
@@ -221,7 +221,7 @@ which can be solved by **Inequality Constrained Least-Squares (ICLS)**[^12]<sup>
 > where $Z=W^{1/2}X$. <br>
 > 3: Update the diagonal elements of the diagonal matrix $W$ by
 > $w_i=[ \tau I(y_i \ge X_i \hat\beta_c ) + (1- \tau ) I(y_i < X_i \hat\beta_c ) ] / [(y_i - X_i \hat\beta_c)^2 + \Delta^2]^{1/2}$. <br>
-> Repeat steps 1-3 until $\hat\beta_c$ converged
+> Repeat steps 1-3 until $\hat\beta_c$ converged, and $\hat\beta_c$ will be the constrained regression coefficient estimator. <br>
 
 By combining the horizontal federated LQR IRLS algorithm together with the ICLS method, simultaneous non-crossing LQR can also be solved iteratively by matrix calculation in horizontal federated learning.
 
