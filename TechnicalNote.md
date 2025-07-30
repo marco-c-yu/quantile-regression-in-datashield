@@ -112,9 +112,11 @@ $$ \hat J_\tau = \frac{1}{nh} \sum_{i=1}^{n} K(\frac{y_i - X_i \hat\beta_\tau}{h
 
 where $K(\cdot)$ is a kernel density function.[^6]<sup>,</sup>[^7]
 
-The $(1-\alpha) \times 100%$ confidence interval of $\beta_\tau$ can be estimated by
+The $(1-\alpha) \times 100% $ confidence interval of $\beta_{\tau,j}$ for the j-th predictor variable can be estimated by
 
-$$\hat\beta_\tau \pm \Phi^{-1}(1-\alpha/2) \sqrt{\Sigma_{\beta,\tau} /n} $$
+$$\hat\beta_{\tau,j} \pm \Phi^{-1}(1-\alpha/2) \sqrt{\Sigma_{\beta,\tau,j} /n} $$
+
+where $\hat\beta_{\tau,j}$ is the j-th element of $\hat\beta_\tau$ and $\Sigma_{\beta,\tau,j}$ is the $(j,j)$ element of $\Sigma_{\beta,\tau}$.
 
 ##
 
