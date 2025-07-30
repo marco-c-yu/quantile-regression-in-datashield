@@ -123,7 +123,7 @@ $\Phi(\cdot)$ is the cumulative distribution function (CDF) of a standard normal
 Hypothesis testing for $H_0: \beta_{\tau,j} = \beta_0$ vs $H_1: \beta_{\tau,j} \neq \beta_0$ 
 can be performed by Wald test with two-sided p-value given by
 
-$$p = 2 \times \Phi{ -|\hat\beta_{\tau,j}-\beta_0| / (\sigma_{\beta,\tau,j}^2 /n)^{1/2} }$$
+$$p = 2 \times \Phi \\{ -|\hat\beta_{\tau,j}-\beta_0| / (\sigma_{\beta,\tau,j}^2 /n)^{1/2} \\}$$
 
 ##
 
