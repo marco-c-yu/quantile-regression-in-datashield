@@ -94,7 +94,7 @@ In practice, it is suggested to approximate the weights by adding a small value 
 
 $$ w_{i;t}=\frac{ \tau I(y_i \ge X_i \hat\beta_{\tau;t} ) + (1- \tau ) I(y_i < X_i \hat\beta_{\tau;t} ) }{\sqrt{(y_i - X_i \hat\beta_{\tau;t})^2 + \Delta^2}} $$
 
-for numerical stability.
+for numerical stability.[^4]
 
 ### 1.4 Asymptotic normality of the regression coefficients estimator of LQR
 
