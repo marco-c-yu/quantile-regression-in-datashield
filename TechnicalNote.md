@@ -44,8 +44,6 @@ $$ Q_{Y|X}(\tau)=inf(y:F_{Y|X}(y)\ge\tau) $$
 
 where $F_{Y|X}$ is the cumulative distribution function (CDF) of Y given X.
 
-##
-
 ### 1.2 Linear Quantile Regression (LQR)
 
 In **Linear Quantile Regression (LQR)**[^1]<sup>,</sup>[^2] model, the conditional quantile function is assumed to be a linear combination of the predictors X:
@@ -202,7 +200,7 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > * $Q_u(\cdot)$ is the quantile function of u. <br>
 > * This federated LQR PK estimator will give the same variance of coefficients estimate as the pooled LQR PK estimator with access to all Individual Participant Data (IPD). <br>
 
-***
+##
 
 Note that IRLS is only one of the algorithm for solving federated LQR. There are studies using subgradient method for solving federated LQR by considering the LQR as a linear programming problem, such as:
 
@@ -215,7 +213,7 @@ Note that IRLS is only one of the algorithm for solving federated LQR. There are
 
 The IRLS algorithm is adopted here since it only requires the access of meta-data of form $(X^T WX)$ and $(X^T Wy)$ which can be easily derived from mean vector and covariance matrix of $W^{1/2} X$ and $W^{1/2} y$. Without any additional R function permission, the IRLS algorithm can be implemented easily in DataSHIELD.
 
-##
+***
 
 ### 3.1 Extension of LQR: Allowing for nonlinearity
 
@@ -271,7 +269,7 @@ The non-crossing multiple LQR can be solved by **Inequality Constrained Least-Sq
 
 By combining the horizontal federated LQR IRLS algorithm together with the ICLS method, simultaneous non-crossing LQR can also be solved iteratively by matrix calculation in horizontal federated learning.
 
-##
+***
 
 ### References
 
