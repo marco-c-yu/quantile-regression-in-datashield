@@ -240,18 +240,19 @@ $\tilde{\tau} = [\tau_1,...,\tau_m]^T \otimes 1_{(n \times 1)}$ with the i-th el
 
 for some small value $\Delta^2$ in the denominator for numerical stability.
 
-Imposing the non-crossing constraint, $Q_{Y|x}(\tau_i) < Q_{Y|x}(\tau_j) \iff \tau_i < \tau_j$, is equivalent to $X\beta_{\tau_i} < X\beta_{\tau_j} \iff \tau_i < \tau_j$, which can be structured into $A\hat{\beta}(t) \ge c$ for some matrix $A$ and column vector $c$.
+Imposing the non-crossing constraint, $Q_{Y|x}(\tau_i) < Q_{Y|x}(\tau_j) \iff \tau_i < \tau_j$, is equivalent to $X\beta_{\tau_i} < X\beta_{\tau_j} \iff \tau_i < \tau_j$, which can be structured into $A\tilde{\beta} \ge c$ for some matrix $A$ and column vector $c$.
 
-which can be solved by **Inequality Constrained Least-Squares (ICLS)**[^12]<sup>,</sup>[^13] in combining with **Iteratively Reweighted Least Squares (IRLS)**[^3]<sup>,</sup>[^4]:
+The non-crossing multiple LQR can be solved by **Inequality Constrained Least-Squares (ICLS)**[^12]<sup>,</sup>[^13] in combining with **Iteratively Reweighted Least Squares (IRLS)**[^3]<sup>,</sup>[^4]:
 
+> 1: Initalize $\hat\beta_c(0)$
 > In each iteration, <br>
-> 1: Solve the unconstrainted regression coefficients by **Weighted Least Squares (WLS)**: $\hat\beta=(X^TW_tX)^{-1}X^TW_ty$ <br>
-> 2: Estimate $\hat\beta_c$ with constraints $(A_1 \hat\beta_c \gg c_1)$ and $(A_2 \hat\beta_c = c_2)$ by **ICLS**: 
-> $\hat\beta_c = \hat\beta + (Z^T Z)^{-1} A_2^T(A_2(Z^T Z)^{-1}A_2^T)^{-1} (c_2-A_2\hat\beta)$, 
-> where $Z=W^{1/2}X$. <br>
-> 3: Update the diagonal elements of the diagonal matrix $W$ by
-> $w_i=[ \tau I(y_i \ge X_i \hat\beta_c ) + (1- \tau ) I(y_i < X_i \hat\beta_c ) ] / [(y_i - X_i \hat\beta_c)^2 + \Delta^2]^{1/2}$. <br>
-> Repeat steps 1-3 until $\hat\beta_c$ converged, and $\hat\beta_c$ will be the constrained regression coefficient estimator. <br>
+> 2: Compute the diagonal matrix $W(t)$ with diagonal elements 
+> $w(t,i)=[ \tau(i) I(\tilde{y(i) \ge \tilde{X}(i) \hat\beta_c ) + (1- \tau(i) ) I(\tilde{y}(i) < \tilde{X}(i) \hat\beta_c ) ] / [(\tilde{y}(i) - \tilde{X}(i) \hat\beta_c)^2 + \Delta^2]^{1/2}$. <br>
+> 3: Solve the unconstrainted regression coefficients by **Weighted Least Squares (WLS)**: $\hat{\beta}(t)=(\tilde{X}^T W(t) \tilde{X})^{-1} \tilde{X}^T W(t) \tilde{y}$ <br>
+> 4: Estimate $\hat\beta_c(t)$ with constraints $(A_1 \hat\beta_c(t) \gg c_1)$ and $(A_2 \hat\beta_c(t) = c_2)$ by **ICLS**: 
+> $\hat\beta_c(t) = \hat\beta(t) + (\tilde{Z}^T(t) \tilde{Z}(t))^{-1} A_2^T(A_2(\tilde{Z}^T(t) \tilde{Z}(t))^{-1}A_2^T)^{-1} (c_2-A_2\hat\beta(t))$, 
+> where $\tilde{Z}(t)=W^{1/2}(t) \tilde{X}$. <br>
+> Repeat steps 2-4 until $\hat\beta_c$ converged, and $\hat\beta_c$ will be the constrained regression coefficient estimator. <br>
 
 By combining the horizontal federated LQR IRLS algorithm together with the ICLS method, simultaneous non-crossing LQR can also be solved iteratively by matrix calculation in horizontal federated learning.
 
