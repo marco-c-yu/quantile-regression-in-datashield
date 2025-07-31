@@ -12,7 +12,7 @@
 > All resources are made available under the GPL3 licence. <br>
 > Please cite our paper and this github page when using any resource here. <br>
 
-##
+***
 
 ### Contents
 
@@ -34,7 +34,7 @@
 
 [References](#references) 
 
-##
+***
 
 ### 1.1 Conditional Quantile Function
 
@@ -125,7 +125,7 @@ can be performed by Wald test with two-sided p-value given by
 
 $$p = 2 \times \Phi \\{ -|\hat\beta_{\tau,j}-\beta_0| / (\sigma_{\beta,\tau,j}^2 /n)^{1/2} \\}$$
 
-##
+***
 
 ### 2.1 Horizontal Federated Learning
 
@@ -202,9 +202,7 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > * $Q_u(\cdot)$ is the quantile function of u. <br>
 > * This federated LQR PK estimator will give the same variance of coefficients estimate as the pooled LQR PK estimator with access to all Individual Participant Data (IPD). <br>
 
----
 ***
-___
 
 Note that IRLS is only one of the algorithm for solving federated LQR. There are studies using subgradient method for solving federated LQR by considering the LQR as a linear programming problem, such as:
 
