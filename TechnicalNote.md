@@ -129,9 +129,9 @@ $$p = 2 \times \Phi \\{ -|\hat\beta_{\tau,j}-\beta_0| / (\sigma_{\beta,\tau,j}^2
 
 A **federated learning system** is a learning process trained on data sets distributed across multiple parties while preventing data leakage.
 
-**Horizontal Federated Learning (a.k.a. sample-based federated learning)** refers to the scenarios that all data sets share the same feature space but with different sample space.[^8]
+**Horizontal Federated Learning (a.k.a. sample-distributed learning)** refers to the scenarios that all data sets share the same feature space but with different sample space.[^8]
 
-There are other categories of federated learning, including **Vertical Federated Learning** and **Federated Transfer Learning**, which will not be discussed here.
+There are other categories of federated learning, including **Vertical Federated Learning (a.k.a. feature-distributed learning)** and **Federated Transfer Learning**, which will not be discussed here.
 
 ### 2.2 Horizontal Federated LQR Algorithms
 
@@ -209,7 +209,6 @@ Note that **IRLS** is only one of the algorithm for solving federated LQR. There
 > * Shi, J., Wang, Y., Zhu, Z., & Lian, H. (2025). Decentralized Learning of Quantile Regression: A Smoothing Approach. Journal of Computational and Graphical Statistics. https://doi.org/10.1080/10618600.2024.2431060;WEBSITE:WEBSITE:TFOPB;PAGEGROUP:STRING:PUBLICATION
 > * Tan, K. M., Battey, H., & Zhou, W.-X. (2021). Communication-Constrained Distributed Quantile Regression with Optimal Statistical Guarantees. Journal of Machine Learning Research, 23, 1–61. https://arxiv.org/pdf/2110.13113
 > * Wang, H., & Li, C. (2018). Distributed Quantile Regression over Sensor Networks. IEEE Transactions on Signal and Information Processing over Networks, 4(2), 338–348. https://doi.org/10.1109/TSIPN.2017.2699923
-> * Xiao, P., Liu, X., Pan, G., & Long, W. (2025). Decentralized Quantile Regression for Feature-Distributed Massive Datasets with Privacy Guarantees. https://www.arxiv.org/pdf/2504.16535
 
 The IRLS algorithm is adopted here since it only requires the access of meta-data of form $(X^T WX)$ and $(X^T Wy)$ which can be easily derived from mean vector and covariance matrix of $W^{1/2} X$ and $W^{1/2} y$. Without any additional R function permission, the IRLS algorithm can be implemented easily in DataSHIELD.
 
