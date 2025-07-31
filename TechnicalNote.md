@@ -253,8 +253,8 @@ The non-crossing multiple LQR can be solved by **Inequality Constrained Least-Sq
 > where $(A_1^T, A_2^T)^T$ is a columnwise rearranged $A$ matrix with $(c_1^T, c_2^T)^T$ is the corresponding columnwise rearranged $c$ vector <br>
 > such that $(A_1 \hat\beta_c(t) \gg c_1)$ and $(A_2 \hat\beta_c(t) = c_2)$, <br>
 > and $\tilde{Z}(t)=W^{1/2}(t) \tilde{X}$. <br>
-> 5: Replace t by t+1.
-> 6: Repeat steps 2-5 until $\hat\beta_c$ converged, and $\hat\beta_c$ will be the constrained regression coefficient estimator. <br>
+> 5: Replace t by t+1. <br>
+> 6: Repeat steps 2-5 until $\hat\beta_c(t)$ converged, and $\hat\beta_c(t)$ will be the constrained regression coefficient estimator. <br>
 
 By combining the horizontal federated LQR IRLS algorithm together with the ICLS method, simultaneous non-crossing LQR can also be solved iteratively by matrix calculation in horizontal federated learning.
 
