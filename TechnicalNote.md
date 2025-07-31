@@ -270,7 +270,7 @@ The **non-crossing multiple LQR** can be solved by **Inequality Constrained Leas
 > 5: Replace t by t+1. <br>
 > 6: Repeat steps 2-5 until $\hat\beta_c(t)$ converged, and $\hat\beta_c(t)$ will be the constrained regression coefficient estimator. <br>
 
-By combining the **horizontal federated LQR IRLS algorithm (Algorithm 1)** together with the above **Inequality Constrained Iteratively Reweighted Least-Squares (ICIRLS) (Algorithm 3)** method, simultaneous non-crossing LQR can also be solved iteratively by matrix calculation in horizontal federated learning.
+By combining the **horizontal federated LQR IRLS algorithm (Algorithm 1)** together with the above **Inequality Constrained Iteratively Reweighted Least-Squares (ICIRLS) algorithm (Algorithm 3)**, simultaneous non-crossing LQR can also be solved iteratively by matrix calculation in horizontal federated learning.
 
 ***
 
