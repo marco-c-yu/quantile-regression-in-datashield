@@ -202,6 +202,8 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > * $Q_u(\cdot)$ is the quantile function of u. <br>
 > * This federated LQR PK estimator will give the same variance of coefficients estimate as the pooled LQR PK estimator with access to all Individual Participant Data (IPD). <br>
 
+---
+
 Note that IRLS is only one of the algorithm for solving federated LQR. There are studies using subgradient method for solving federated LQR by considering the LQR as a linear programming problem, such as:
 
 > * Huang, L., Wei, X., Zhu, P., Gao, Y., Chen, M., & Kang, B. (2020). Federated Quantile Regression over Networks. 2020 International Wireless Communications and Mobile Computing, IWCMC 2020, 57–62. https://doi.org/10.1109/IWCMC48107.2020.9148186
