@@ -28,7 +28,7 @@ The R program, **[DataSHIELD_LQR_for_only_one_predictor.R](DataSHIELD_LQR_for_on
 
 ##
 
-#### Analyst side
+#### Analyst side:
 
 Tested in R version 4.1.2
 
@@ -47,7 +47,7 @@ which estimate unconditional quantile by IRLS without variance estimation.
 
 ##
 
-#### Server side
+#### Server side:
 
 DataSHIELD servers were setup using **[OBiBa/Opal docker](https://github.com/obiba/docker-opal)**.
 
