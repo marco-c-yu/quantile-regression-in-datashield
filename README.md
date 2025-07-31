@@ -12,13 +12,13 @@
 > All resources are made available under the GPL3 licence. <br>
 > Please cite our paper and this github page when using any resource here. <br>
 
-##
+***
 
 ## Mathematical details
 
 Mathematical details of this horizontal federated quantile regression can refer to **[TechnicalNote.md](TechnicalNote.md)**
 
-##
+***
 
 ## R program
 
@@ -55,7 +55,7 @@ Tested server setting was recorded in the docker-compose file: **[docker-compose
 
 which is based on **obiba/opal:4.5** with **datashield/rock-base:6.2-R4.1**.
 
-##
+***
 
 ## Reference:
 
