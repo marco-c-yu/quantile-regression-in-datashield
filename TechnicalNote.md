@@ -223,7 +223,17 @@ By storing $s_1$ to $s_{K-1}$ as variables in the datasets, it reduced to a LQR 
 In some situations, we might want to estimate multiple quantiles simultaneously and impose the **non-crossing constraints**: 
 $Q_{Y|x}(\tau_i) < Q_{Y|x}(\tau_j) \iff \tau_i < \tau_j$
 
-In LQR, the non-crossing constraints are equivalent to $X\beta_{\tau_i} < X\beta_{\tau_j} \iff \tau_i < \tau_j$,
+In LQR, multiple quantiles, $Q_{Y|x}(\tau_1) ,..., Q_{Y|x}(\tau_m)$, can be estimated simultaneously by vectorization of multivariate regression using Kronecker product:
+
+$\mathbf{y} = 1_{(m \times 1)} \otimes y$
+
+$\mathbf{\tau} = [\tau_1,...,\tau_m]^T \otimes 1_{(n \times 1)}$
+
+$\mathbf{X} = I_{(m \times m)} \otimes X$
+
+$\mathbf{\beta} = [\beta_{\tau,1} ,..., \beta_{\tau,m}]$
+
+the non-crossing constraints are equivalent to $X\beta_{\tau_i} < X\beta_{\tau_j} \iff \tau_i < \tau_j$,
 
 which can be solved by **Inequality Constrained Least-Squares (ICLS)**[^12]<sup>,</sup>[^13] in combining with **Iteratively Reweighted Least Squares (IRLS)**[^3]<sup>,</sup>[^4]:
 
