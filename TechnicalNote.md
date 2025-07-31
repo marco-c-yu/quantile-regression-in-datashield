@@ -135,11 +135,11 @@ There are other categories of federated learning, including **Vertical Federated
 
 ### 2.2 Horizontal Federated LQR Algorithms
 
-In [1.3](#13-iteratively-reweighted-least-squares-irls-method-for-lqr), we showed that the regression coefficients of LQR can be solved by IRLS,
+In [1.3](#13-iteratively-reweighted-least-squares-irls-method-for-lqr), we showed that the regression coefficients of LQR can be solved by **IRLS**,
 
 it is similar to the algorithm for solving federated generalized linear model (GLM).[^9]
 
-Estimation for variance of coefficient follows the implementation of Powell's kernel estimator in the **quantreg**[^10] package in **R**.
+Estimation for variance of coefficient follows the implementation of **Powell's kernel** estimator in the **quantreg**[^10] package in **R**.
 
 The proposed algorithms for regression coefficients and variance of coefficients estimation of horizontal federated LQR are summarized as follow:
 
@@ -202,7 +202,7 @@ The proposed algorithms for regression coefficients and variance of coefficients
 
 ##
 
-Note that IRLS is only one of the algorithm for solving federated LQR. There are studies using subgradient method for solving federated LQR by considering the LQR as a linear programming problem, such as:
+Note that **IRLS** is only one of the algorithm for solving federated LQR. There are studies using **subgradient** method for solving federated LQR by considering the LQR as a linear programming problem, such as:
 
 > * Huang, L., Wei, X., Zhu, P., Gao, Y., Chen, M., & Kang, B. (2020). Federated Quantile Regression over Networks. 2020 International Wireless Communications and Mobile Computing, IWCMC 2020, 57–62. https://doi.org/10.1109/IWCMC48107.2020.9148186
 > * Jiang, R., & Yu, K. (2021). Smoothing quantile regression for a distributed system. Neurocomputing, 466, 311–326. https://doi.org/10.1016/J.NEUCOM.2021.08.101
@@ -229,12 +229,14 @@ $s_j = (x-t_{j-1})^3I(x-t_{j-1}>0) - (x-t_{K-1})^3I(x-t_{K-1}>0)\frac{(t_{K}-t_{
 
 By storing $s_1$ to $s_{K-1}$ as variables in the datasets, it reduced to a LQR problem of fitting the quantile of Y on $s_1$, $s_2$,..., $s_{K-1}$.
 
+##
+
 ### 3.2 Extension of LQR: Multiple non-crossing quantile estimation
 
 In some situations, we might want to estimate multiple quantiles simultaneously and impose the **non-crossing constraint**: 
 $Q_{Y|x}(\tau_i) < Q_{Y|x}(\tau_j) \iff \tau_i < \tau_j$
 
-In LQR, multiple quantiles, $Q_{Y|x}(\tau_1) ,..., Q_{Y|x}(\tau_m)$, can be estimated simultaneously by vectorization of multivariate regression using Kronecker product so that the IRLS estimator for $\tilde{\beta} = [\beta_{\tau,1}^T ,..., \beta_{\tau,m}^T]^T$ is given by
+**Unconstrainted multiple LQR**, $Q_{Y|x}(\tau_1) ,..., Q_{Y|x}(\tau_m)$, can be estimated simultaneously by **vectorization** of multivariate regression using **Kronecker product** so that the IRLS estimator for $\tilde{\beta} = [\beta_{\tau,1}^T ,..., \beta_{\tau,m}^T]^T$ is given by
 
 $$\hat{\beta}(t)=(\tilde{X}^T W(t) \tilde{X})^{-1} \tilde{X}^T W(t) \tilde{y}$$
 
@@ -253,7 +255,7 @@ for some small value $\Delta^2$ in the denominator for numerical stability.
 
 Imposing the non-crossing constraint, $Q_{Y|x}(\tau_i) < Q_{Y|x}(\tau_j) \iff \tau_i < \tau_j$, is equivalent to $X\beta_{\tau_i} < X\beta_{\tau_j} \iff \tau_i < \tau_j$, which can be structured into $A\tilde{\beta} \ge c$ for some matrix $A$ and column vector $c$.
 
-The non-crossing multiple LQR can be solved by **Inequality Constrained Least-Squares (ICLS)**[^12]<sup>,</sup>[^13] in combining with **Iteratively Reweighted Least Squares (IRLS)**[^3]<sup>,</sup>[^4]:
+The **non-crossing multiple LQR** can be solved by **Inequality Constrained Least-Squares (ICLS)**[^12]<sup>,</sup>[^13] in combining with **Iteratively Reweighted Least Squares (IRLS)**[^3]<sup>,</sup>[^4]:
 
 > 1: Initalize $\hat\beta_c(0)$ <br>
 > 2: Compute the diagonal matrix $W(t)$ with diagonal elements 
