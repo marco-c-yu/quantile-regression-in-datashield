@@ -202,7 +202,7 @@ The proposed algorithms for regression coefficients and variance of coefficients
 
 ##
 
-Note that **IRLS** is only one of the algorithm for solving federated LQR. There are studies using **subgradient** method for solving federated LQR by considering the LQR as a linear programming problem, such as:
+Note that **IRLS** is only one of the algorithm for solving federated LQR. There are studies proposed the use of **subgradient** method for solving federated QR which structured QR as a linear programming problem, such as:
 
 > * Huang, L., Wei, X., Zhu, P., Gao, Y., Chen, M., & Kang, B. (2020). Federated Quantile Regression over Networks. 2020 International Wireless Communications and Mobile Computing, IWCMC 2020, 57–62. https://doi.org/10.1109/IWCMC48107.2020.9148186
 > * Jiang, R., & Yu, K. (2021). Smoothing quantile regression for a distributed system. Neurocomputing, 466, 311–326. https://doi.org/10.1016/J.NEUCOM.2021.08.101
