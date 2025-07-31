@@ -223,7 +223,7 @@ By storing $s_1$ to $s_{K-1}$ as variables in the datasets, it reduced to a LQR 
 In some situations, we might want to estimate multiple quantiles simultaneously and impose the **non-crossing constraint**: 
 $Q_{Y|x}(\tau_i) < Q_{Y|x}(\tau_j) \iff \tau_i < \tau_j$
 
-In LQR, multiple quantiles, $Q_{Y|x}(\tau_1) ,..., Q_{Y|x}(\tau_m)$, can be estimated simultaneously by vectorization of multivariate regression using Kronecker product so that the IRLS estimator is given by
+In LQR, multiple quantiles, $Q_{Y|x}(\tau_1) ,..., Q_{Y|x}(\tau_m)$, can be estimated simultaneously by vectorization of multivariate regression using Kronecker product so that the IRLS estimator for $\tilde{\beta} = [\beta_{\tau,1}^T ,..., \beta_{\tau,m}^T]^T$ is given by
 
 $$\hat{\beta}(t)=(\tilde{X}^T W(t) \tilde{X})^{-1} \tilde{X}^T W(t) \tilde{y}$$
 
@@ -234,11 +234,11 @@ $\tilde{y} = 1_{(m \times 1)} \otimes y$ with the i-th element $\tilde{y}(i)$,
 $\tilde{X} = I_{(m \times m)} \otimes X$ with the i-th row vector $\tilde{X}(i)$, 
 
 $W(t)$ is a diagonal matrix with diagonal elements 
-$w(t,i)=[ \tilde{\tau}(i) I(\tilde{y}(i) \ge \tilde{X}(i) \hat{\beta} ) + (1- \tilde{\tau}(i) ) I(\tilde{y}(i) < \tilde{X}(i) \hat{\beta} ) ] / [ (\tilde{y}(i) - \tilde{X}(i) \hat{\beta})^2 + \Delta^2 ]^{1/2}$, 
+$w(t,i)=[ \tilde{\tau}(i) I(\tilde{y}(i) \ge \tilde{X}(i) \hat{\beta}(t) ) + (1- \tilde{\tau}(i) ) I(\tilde{y}(i) < \tilde{X}(i) \hat{\beta}(t) ) ] / [ (\tilde{y}(i) - \tilde{X}(i) \hat{\beta}(t))^2 + \Delta^2 ]^{1/2}$, and
 
-$\tilde{\tau} = [\tau_1,...,\tau_m]^T \otimes 1_{(n \times 1)}$ with the i-th element $\tilde{\tau}(i)$, and
+$\tilde{\tau} = [\tau_1,...,\tau_m]^T \otimes 1_{(n \times 1)}$ with the i-th element $\tilde{\tau}(i)$, 
 
-$\tilde{\beta} = [\beta_{\tau,1}^T ,..., \beta_{\tau,m}^T]^T$
+for some small value $\Delta^2$ in the denominator for numerical stability.
 
 Imposing the non-crossing constraint, $Q_{Y|x}(\tau_i) < Q_{Y|x}(\tau_j) \iff \tau_i < \tau_j$, is equivalent to $X\beta_{\tau_i} < X\beta_{\tau_j} \iff \tau_i < \tau_j$, which can be structured into $A\hat{\beta}(t) \ge c$ for some matrix $A$ and column vector $c$.
 
