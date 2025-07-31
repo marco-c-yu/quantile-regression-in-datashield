@@ -14,13 +14,13 @@
 
 ***
 
-## Mathematical details
+### Mathematical details
 
 Mathematical details of this horizontal federated quantile regression can refer to **[TechnicalNote.md](TechnicalNote.md)**
 
 ***
 
-## R program
+### R program
 
 The R program, **[DataSHIELD_LQR.R](DataSHIELD_LQR.R)**, was developed for performing **linear quantile regression (LQR)**[^1] using **[DataSHIELD](https://datashield.org/)**.
 
@@ -28,7 +28,7 @@ The R program, **[DataSHIELD_LQR_for_only_one_predictor.R](DataSHIELD_LQR_for_on
 
 ##
 
-### Analyst side
+#### Analyst side
 
 Tested in R version 4.1.2
 
@@ -47,7 +47,7 @@ which estimate unconditional quantile by IRLS without variance estimation.
 
 ##
 
-### Server side
+#### Server side
 
 DataSHIELD servers were setup using **[OBiBa/Opal docker](https://github.com/obiba/docker-opal)**.
 
@@ -57,7 +57,7 @@ which is based on **obiba/opal:4.5** with **datashield/rock-base:6.2-R4.1**.
 
 ***
 
-## Reference:
+### Reference:
 
 [^1]: Koenker, R., & Bassett, G. (1978). Regression Quantiles. Econometrica, 46(1), 33. https://doi.org/10.2307/1913643
 
