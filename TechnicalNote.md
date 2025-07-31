@@ -203,6 +203,8 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > * This federated LQR PK estimator will give the same variance of coefficients estimate as the pooled LQR PK estimator with access to all Individual Participant Data (IPD). <br>
 
 ---
+***
+___
 
 Note that IRLS is only one of the algorithm for solving federated LQR. There are studies using subgradient method for solving federated LQR by considering the LQR as a linear programming problem, such as:
 
