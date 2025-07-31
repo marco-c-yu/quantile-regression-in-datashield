@@ -230,6 +230,8 @@ $\hat{\beta}_t=(\tilde{X}^T W_t \tilde{X})^{-1} \tilde{X}^T W_t \tilde{y}$
 where $\tilde{y} = 1_{(m \times 1)} \otimes y$,
 $W_t$ is a diagonal matrix with diagonal elements 
 $w_i=[ \tilde{\tau}_i I(\tilde{y}_i \ge \tilde{X}_i \hat{\beta} ) + (1- \tilde{\tau}_i ) I(\tilde{y}_i < \tilde{X}_i \hat{\beta} ) ] / [ (\tilde{y}_i - \tilde{X}_i \hat{\beta})^2 + \Delta^2 ]^{1/2}$, 
+$w_i=[ \tilde{\tau}_i I(\tilde{y}_i \ge \tilde{X}_i \hat{\beta} ) + (1- \tilde{\tau}_i ) I(\tilde{y}_i < \tilde{X}_i \hat{\beta} ) ]$, 
+$w_i=1 / [ (\tilde{y}_i - \tilde{X}_i \hat{\beta})^2 + \Delta^2 ]^{1/2}$, 
 $\tilde{\tau} = [\tau_1,...,\tau_m]^T \otimes 1_{(n \times 1)}$, 
 $\tilde{X} = I_{(m \times m)} \otimes X$, and 
 $\tilde{\beta} = [\beta_{\tau,1}^T ,..., \beta_{\tau,m}^T]^T$
