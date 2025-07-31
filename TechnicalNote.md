@@ -225,13 +225,13 @@ $Q_{Y|x}(\tau_i) < Q_{Y|x}(\tau_j) \iff \tau_i < \tau_j$
 
 In LQR, multiple quantiles, $Q_{Y|x}(\tau_1) ,..., Q_{Y|x}(\tau_m)$, can be estimated simultaneously by vectorization of multivariate regression using Kronecker product:
 
-$\mathbf{y} = 1_{(m \times 1)} \otimes y$
+$\tilde{y} = 1_{(m \times 1)} \otimes y$
 
-$\mathbf{\tau} = [\tau_1,...,\tau_m]^T \otimes 1_{(n \times 1)}$
+$\tilde{\tau} = [\tau_1,...,\tau_m]^T \otimes 1_{(n \times 1)}$
 
-$\mathbf{X} = I_{(m \times m)} \otimes X$
+$\tilde{X} = I_{(m \times m)} \otimes X$
 
-$\mathbf{\beta} = [\beta_{\tau,1} ,..., \beta_{\tau,m}]$
+$\tilde{\beta} = [\beta_{\tau,1} ,..., \beta_{\tau,m}]$
 
 the non-crossing constraints are equivalent to $X\beta_{\tau_i} < X\beta_{\tau_j} \iff \tau_i < \tau_j$,
 
