@@ -202,6 +202,17 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > * $Q_u(\cdot)$ is the quantile function of u. <br>
 > * This federated LQR PK estimator will give the same variance of coefficients estimate as the pooled LQR PK estimator with access to all Individual Participant Data (IPD). <br>
 
+Note that IRLS is only one of the algorithm for solving federated LQR. There are studies using subgradient method for solving federated LQR by considering the LQR as a linear programming problem, such as:
+
+> * Huang, L., Wei, X., Zhu, P., Gao, Y., Chen, M., & Kang, B. (2020). Federated Quantile Regression over Networks. 2020 International Wireless Communications and Mobile Computing, IWCMC 2020, 57–62. https://doi.org/10.1109/IWCMC48107.2020.9148186
+> * Jiang, R., & Yu, K. (2021). Smoothing quantile regression for a distributed system. Neurocomputing, 466, 311–326. https://doi.org/10.1016/J.NEUCOM.2021.08.101
+> * Shi, J., Wang, Y., Zhu, Z., & Lian, H. (2025). Decentralized Learning of Quantile Regression: A Smoothing Approach. Journal of Computational and Graphical Statistics. https://doi.org/10.1080/10618600.2024.2431060;WEBSITE:WEBSITE:TFOPB;PAGEGROUP:STRING:PUBLICATION
+> * Tan, K. M., Battey, H., & Zhou, W.-X. (2021). Communication-Constrained Distributed Quantile Regression with Optimal Statistical Guarantees. Journal of Machine Learning Research, 23, 1–61. https://arxiv.org/pdf/2110.13113
+> * Wang, H., & Li, C. (2018). Distributed Quantile Regression over Sensor Networks. IEEE Transactions on Signal and Information Processing over Networks, 4(2), 338–348. https://doi.org/10.1109/TSIPN.2017.2699923
+> * Xiao, P., Liu, X., Pan, G., & Long, W. (2025). Decentralized Quantile Regression for Feature-Distributed Massive Datasets with Privacy Guarantees. https://www.arxiv.org/pdf/2504.16535
+
+The IRLS algorithm is adopted here since it only requires the access of meta-data of form $(X^T WX)$ and $(X^T Wy)$ which can be easily derived from mean vector and covariance matrix of $W^{1/2} X$ and $W^{1/2} y$. Without any additional R function permission, the IRLS algorithm can be implemented easily in DataSHIELD.
+
 ##
 
 ### 3.1 Extension of LQR: Allowing for nonlinearity
