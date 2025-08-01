@@ -256,7 +256,7 @@ Imposing the non-crossing constraint, $Q_{Y|x}(\tau_i) < Q_{Y|x}(\tau_j) \iff \t
 
 The **non-crossing multiple LQR** can be solved by **Inequality Constrained Least-Squares (ICLS)**[^12]<sup>,</sup>[^13] in combining with **Iteratively Reweighted Least Squares (IRLS)**[^3]<sup>,</sup>[^4]:
 
-> #### Algorithm 3: Inequality Constrained Iteratively Reweighted Least-Squares (ICIRLS) estimator for simultaneous non-crossing LQR
+> #### Algorithm 3: Iteratively Reweighted Inequality Constrained Least-Squares (IRICLS) estimator for simultaneous non-crossing LQR
 > 1: Initalize $\hat\beta_c(0)$ <br>
 > 2: Compute the diagonal matrix $W(t)$ with diagonal elements 
 > $w(t,i)=[ \tau(i) I(\tilde{y}(i) \ge \tilde{X}(i) \hat\beta_c(t-1) ) + (1- \tau(i) ) I(\tilde{y}(i) < \tilde{X}(i) \hat\beta_c(t-1) ) ] / [(\tilde{y}(i) - \tilde{X}(i) \hat\beta_c(t-1))^2 + \Delta^2]^{1/2}$. <br>
@@ -269,7 +269,7 @@ The **non-crossing multiple LQR** can be solved by **Inequality Constrained Leas
 > 5: Replace t by t+1. <br>
 > 6: Repeat steps 2-5 until $\hat\beta_c(t)$ converged, and $\hat\beta_c(t)$ will be the constrained regression coefficient estimator. <br>
 
-By combining the **horizontal federated LQR IRLS algorithm (Algorithm 1)** together with the above **Inequality Constrained Iteratively Reweighted Least-Squares (ICIRLS) algorithm (Algorithm 3)**, simultaneous non-crossing LQR can also be solved iteratively by matrix calculation in horizontal federated learning.
+By combining the **horizontal federated LQR IRLS algorithm (Algorithm 1)** together with the above **Iteratively Reweighted Inequality Constrained Least-Squares (IRICLS) algorithm (Algorithm 3)**, simultaneous non-crossing LQR can also be solved iteratively by matrix calculation in horizontal federated learning.
 
 ***
 
