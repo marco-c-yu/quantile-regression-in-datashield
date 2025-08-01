@@ -252,7 +252,7 @@ $\tilde{\tau} = [\tau_1,...,\tau_m]^T \otimes 1_{(n \times 1)}$ with the i-th el
 
 for some small value $\Delta^2$ in the denominator for numerical stability.
 
-Imposing the non-crossing constraint, $Q_{Y|x}(\tau_i) < Q_{Y|x}(\tau_j) \iff \tau_i < \tau_j$, is equivalent to $X\beta_{\tau_i} < X\beta_{\tau_j} \iff \tau_i < \tau_j$, which can be structured into $A\tilde{\beta} \ge c$ for some matrix $A$ and column vector $c$.
+Imposing the non-crossing constraint, $Q_{Y|x}(\tau_i) < Q_{Y|x}(\tau_j) \iff \tau_i < \tau_j$, in LQR is equivalent to $X\beta_{\tau_i} < X\beta_{\tau_j} \iff \tau_i < \tau_j$, which can be structured into $A\tilde{\beta} \ge c$ for some matrix $A$ and column vector $c$.
 
 The **non-crossing multiple LQR** can be solved by **Inequality Constrained Least-Squares (ICLS)**[^12]<sup>,</sup>[^13] in combining with **Iteratively Reweighted Least Squares (IRLS)**[^3]<sup>,</sup>[^4]:
 
