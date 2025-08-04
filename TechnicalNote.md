@@ -149,11 +149,11 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > <br>
 > In each party node, m, for $(t \ge 0)$, <br>
 > 2: compute $w_{m,i;t}=\frac{ \tau I(y_m,i \ge X_m,i \hat\beta_{\tau;t} ) + (1- \tau ) I(y_m,i < X_m,i \hat\beta_{\tau;t} ) }{\sqrt{(y_m,i - X_m,i \hat\beta_{\tau;t})^2 + \Delta^2}}$ <br>
-> 3: compute the weighted predictors $(W_{m,t}^{1/2}X_m)$ and weighted response $(W_{m,t}^{1/2}y_m)$ <br>
+> 3: compute the weighted predictors $(W_{m;t}^{1/2}X_m)$ and weighted response $(W_{m;t}^{1/2}y_m)$ <br>
 > 4: compute $(X_m^TW_{m,t}X_m)$ and $(X_m^TW_{m,t}y_m)$ <br>
 > <br>
 > In server, <br>
-> 5: comppute $(X^TW_tX) = \sum_m (X_m^TW_{m,t}X_m)$ and $(X^TW_ty) = \sum_m (X_m^TW_{m,t}y_m)$ <br>
+> 5: comppute $(X^TW_tX) = \sum_m (X_m^TW_{m;t}X_m)$ and $(X^TW_ty) = \sum_m (X_m^TW_{m;t}y_m)$ <br>
 > 6: solve the matrix inverse $(X^TW_tX)^{-1}$ <br>
 > 7: compute $\beta_{\tau;t+1} = (X^TW_tX)^{-1}X^TW_ty$ <br>
 > 8: replace $t$ by $t+1$ <br>
@@ -163,8 +163,8 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > <br>
 > ###### Remarks:
 > * $y_m$ and $X_m$ represents the observed response and predictors in the m-th party. <br>
-> * $(X_m^TW_{m,t}X_m)$ and $(X_m^TW_{m,t}y_m)$ can be derived from the mean and covariance matrix of $(W_{m,t}^{1/2}X_m)$ and $(W_{m,t}^{1/2}y_m)$ using the property $Cov(X,Y)=E(XY)-E(X)E(Y)$ <br>
-> * By realizing $(X^TW_tX)=\sum_i (X_i^Tw_{i,t}X_i)=sum_m (X_m^TW_{m,t}X_m)$ and $X^TW_ty==\sum_i (X_i^Tw_{i,t}y_i)=sum_m (X_m^TW_{m,t}y_m)$, it is easy to observe that this federated LQR IRLS estimator will give the same estimate as the pooled LQR with access to all Individual Participant Data (IPD). <br>
+> * $(X_m^TW_{m;t}X_m)$ and $(X_m^TW_{m;t}y_m)$ can be derived from the mean and covariance matrix of $(W_{m;t}^{1/2}X_m)$ and $(W_{m;t}^{1/2}y_m)$ using the property $Cov(X,Y)=E(XY)-E(X)E(Y)$ <br>
+> * By realizing $(X^TW_tX)=\sum_i (X_i^Tw_{i;t}X_i)=sum_m (X_m^TW_{m;t}X_m)$ and $X^TW_ty==\sum_i (X_i^Tw_{i;t}y_i)=sum_m (X_m^TW_{m;t}y_m)$, it is easy to observe that this federated LQR IRLS estimator will give the same estimate as the pooled LQR with access to all Individual Participant Data (IPD). <br>
 
 > #### Algorithm 2: Powell's kernel (PK) estimator of the variance of coefficients of horizontal federated LQR[^6]<sup>,</sup>[^7] <br>
 > 1: Obtain the IRLS estimator of regression coefficients, $\hat\beta_\tau$, in Algorithm 1. <br>
