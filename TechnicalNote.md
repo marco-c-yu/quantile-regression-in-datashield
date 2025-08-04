@@ -164,7 +164,7 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > ###### Remarks:
 > * $y_m$ and $X_m$ represents the observed response and predictors in the m-th party. <br>
 > * $(X_m^TW_{m,t}X_m)$ and $(X_m^TW_{m,t}y_m)$ can be derived from the mean and covariance matrix of $(W_{m,t}^{1/2}X_m)$ and $(W_{m,t}^{1/2}y_m)$ using the property $Cov(X,Y)=E(XY)-E(X)E(Y)$ <br>
-> * This federated LQR IRLS estimator will give the same estimate as the pooled LQR with access to all Individual Participant Data (IPD). <br>
+> * By realizing $(X^TW_tX)=\sum_i (X_i^Tw_{i,t}X_i)=sum_m (X_m^TW_{m,t}X_m)$ and $X^TW_ty==\sum_i (X_i^Tw_{i,t}y_i)=sum_m (X_m^TW_{m,t}y_m)$, it is easy to observe that this federated LQR IRLS estimator will give the same estimate as the pooled LQR with access to all Individual Participant Data (IPD). <br>
 
 > #### Algorithm 2: Powell's kernel (PK) estimator of the variance of coefficients of horizontal federated LQR[^6]<sup>,</sup>[^7] <br>
 > 1: Obtain the IRLS estimator of regression coefficients, $\hat\beta_\tau$, in Algorithm 1. <br>
