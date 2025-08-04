@@ -150,7 +150,7 @@ The proposed algorithms for regression coefficients and variance of coefficients
 > In each party node, m, for $(t \ge 0)$, <br>
 > 2: compute $w_{m,i;t}=\frac{ \tau I(y_m,i \ge X_m,i \hat\beta_{\tau;t} ) + (1- \tau ) I(y_m,i < X_m,i \hat\beta_{\tau;t} ) }{\sqrt{(y_m,i - X_m,i \hat\beta_{\tau;t})^2 + \Delta^2}}$ <br>
 > 3: compute the weighted predictors $(W_{m;t}^{1/2}X_m)$ and weighted response $(W_{m;t}^{1/2}y_m)$ <br>
-> 4: compute $(X_m^TW_{m,t}X_m)$ and $(X_m^TW_{m,t}y_m)$ <br>
+> 4: compute $(X_m^TW_{m;t}X_m)$ and $(X_m^TW_{m;t}y_m)$ <br>
 > <br>
 > In server, <br>
 > 5: comppute $(X^TW_tX) = \sum_m (X_m^TW_{m;t}X_m)$ and $(X^TW_ty) = \sum_m (X_m^TW_{m;t}y_m)$ <br>
